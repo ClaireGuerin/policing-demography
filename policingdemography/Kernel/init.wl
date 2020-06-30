@@ -2,5 +2,4 @@
 
 
 Clear["Global`*"]
-(*Get[ "chiefstitution`plots`"]*)
-(*Get[ "chiefstitution`fullgame`"]*)
+Get[ "policingdemography`dynamics`"]

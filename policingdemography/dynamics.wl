@@ -6,7 +6,11 @@ BeginPackage["policing-demography`"]
 (*Needs[ "chiefstitution`onegeneration`"]*)
 (* Exported symbols added here with SymbolName::usage *) 
 
-gradient::usage="gradient[]"
+resources::usage="resources[x,xn,n] returns the amount of resources for mutant phenotype x, in a resident group of size n with phenotype xn"
+fitness::usage="fitness[x,xn,n] returns the fitness for mutant phenotype x, in a resident group of size n with phenotype xn"
+dynamics::usage="dynamics[xm,n,nr] returns migration dynamics of deme of size n with mutant xm, in population structured in infinite islands at ecological equilibrium nr"
+monopopulation::usage="monopopulation[] returns monomorphic population conditions / rules"
+gradient::usage="gradient[] returns the selection gradient for phenotype y and group size n"
 
 Begin["`Private`"]
 (* Implementation of the package *)
