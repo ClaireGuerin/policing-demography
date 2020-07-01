@@ -4,7 +4,6 @@
 BeginPackage["policingdemography`"]
 
 (* Exported symbols added here with SymbolName::usage *) 
-numerics::usage="numerics[single set of parameters]";
 search::usage="search[possible parameter values to be explored] needs to be fed {th, rb, c1, c2, b, d, p, \[Eta], \[Gamma], m} in that order";
 
 Begin["`Private`"]
@@ -56,7 +55,7 @@ numerics[parSet_] := Block[{ecoequi,nZero,nOne,nTrend},
 	(** ->[sEqui] Get the selection gradient sign for a range of y between 0 and 1 (included)  **)
 	gradientZeroOut = s /. ecoequi /. y -> # & /@ Range[0.1, 1, 0.1];
 	gradientZeroIn = s /. ecoequi /. y -> 10^(-10);
-	sEqui = Prepend[gradientZeroIn,gradientZeroOut];
+	sEqui = Prepend[gradientZeroOut,gradientZeroIn];
 	(** ->[sZero] Get the sign / value of the selection gradient for y=0 and n=neq(1) **)
 	sZero = s /. {n -> nOne, y -> 10^(-10)};
 	(* sZero = Sign[s /. {n -> nOne, y -> 10^(-10)}] *)
@@ -67,12 +66,15 @@ numerics[parSet_] := Block[{ecoequi,nZero,nOne,nTrend},
 search[values_List] := Block[{names, combinationsList, combinationsRule,results},
 	(*Assign the pars values to the private set of parameter rules*)
 	names = {th, rb, c1, c2, b, d, p, eta, gamma, m};
+	If[Length[values]!=Length[names],Message[search::len, Length[values]],
 	combinationsList = Tuples[values];
 	combinationsRule = Map[MapThread[Rule, {names, combinationsList[[#]]}] &, Range[Length[combinationsList]]];
 
 	(*Calculate all the things we need*)
 	results = numerics[#] &/@ combinationsRule;
-	Return[<|"comb"->combinationsRule, "res"->results|>]]
+	Return[<|"comb"->combinationsRule, "res"->results|>]]]
+
+search::len = "You gave `1` parameters, this model needs 10";
 
 End[]
 
