@@ -4,20 +4,11 @@
 BeginPackage["policingdemography`"]
 
 (* Exported symbols added here with SymbolName::usage *) 
-resources::usage="";
-fitness::usage="";
-dynamics::usage="";
-search::usage="";
+numerics::usage="numerics[single set of parameters]";
+search::usage="search[possible parameter values to be explored] needs to be fed {th, rb, c1, c2, b, d, p, \[Eta], \[Gamma], m} in that order";
 
 Begin["`Private`"]
 (* Implementation of the package *)
-
-(*doTheCoolStuff[s_,f_,pars_] := Block[{sNum,sSign},
-	ecologicalEq = DeleteCases[Flatten[NSolve[(n == f) /. pars, n]], n -> 0.`];
-	sNum = s /. pars /. m -> 0.5 /. ecologialEq;
-	sZero = sNum /. y->0;
-	sSign = Refine[Reduce[sNum > 0], 0 < y < 1];
-	Return[ecologicalEq]]*)
 
 (* FUNCTIONS AND EXPRESSIONS *)
 resources[x_,xn_,n_] := Block[{baseres,cost,benef,police,tot},
@@ -46,7 +37,10 @@ gradient = ((1 - m)*(m - 1)*n^4*rb^2*(-(b*gamma*((-n)*(p - 1)*y)^gamma) + c1*n*y
 
 (* PARAMETER SEARCH *)
 
-numerics[parSet_,mig_] := Block[{ecoequi,nZero,nOne,nTrend},
+numerics[parSet_] := Block[{ecoequi,nZero,nOne,nTrend},
+
+	(**********************************************************************************)
+	
 	(* CALCULATE THE ECOLOGICAL EQUILIBRIUM WITH GIVEN PARAMETER SET *)
 	ecoequi = DeleteCases[Flatten[NSolve[(n == dynamics[xm,n,nr]) /. monopopulation /. parSet, n]], n -> 0.`];
 	(** ->[nZero] Get the size of the ecological equilibrium when y=0 **)
@@ -58,22 +52,27 @@ numerics[parSet_,mig_] := Block[{ecoequi,nZero,nOne,nTrend},
 	(**********************************************************************************)
 	
 	(* CALCULATE SELECTION GRADIENT AT ECOLOGICAL EQUILIBRIUM FOR GIVEN PARAMETER SET *)
-	s = gradient /. parSet /. m -> mig /. ecoequi;
+	s = gradient /. parSet;
 	(** ->[sEqui] Get the selection gradient sign for a range of y between 0 and 1 (included)  **)
+	gradientZeroOut = s /. ecoequi /. y -> # & /@ Range[0.1, 1, 0.1];
+	gradientZeroIn = s /. ecoequi /. y -> 10^(-10);
+	sEqui = Prepend[gradientZeroIn,gradientZeroOut];
+	(** ->[sZero] Get the sign / value of the selection gradient for y=0 and n=neq(1) **)
+	sZero = s /. {n -> nOne, y -> 10^(-10)};
+	(* sZero = Sign[s /. {n -> nOne, y -> 10^(-10)}] *)
+	(**********************************************************************************)
 
-	(** ->[sZero] Get the sign of the selection gradient for y=0 and n=neq(1) **)
+	Return[<|"nZero"->nZero,"nOne"->nOne,"nTrend"->nTrend,"sEqui"->sEqui,"sZero"->sZero|>]]
 
-	Return[nZero,nOne,nTrend,sEqui,sZero]]
-
-search[values_List,mig_] := Block[{names, combinationsList, combinationsRule,results},
+search[values_List] := Block[{names, combinationsList, combinationsRule,results},
 	(*Assign the pars values to the private set of parameter rules*)
-	names = {th, rb, c1, c2, b, d, p, eta, gamma};
+	names = {th, rb, c1, c2, b, d, p, eta, gamma, m};
 	combinationsList = Tuples[values];
 	combinationsRule = Map[MapThread[Rule, {names, combinationsList[[#]]}] &, Range[Length[combinationsList]]];
 
 	(*Calculate all the things we need*)
-	results = numerics[#,mig] &/@ combinationsRule;
-	Return[results]]
+	results = numerics[#] &/@ combinationsRule;
+	Return[<|"comb"->combinationsRule, "res"->results|>]]
 
 End[]
 
