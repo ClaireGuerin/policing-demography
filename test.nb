@@ -10,14 +10,4339 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[       784,         34]
-NotebookOptionsPosition[       561,         21]
-NotebookOutlinePosition[       924,         37]
-CellTagsIndexPosition[       881,         34]
+NotebookDataLength[    171371,       4473]
+NotebookOptionsPosition[    164299,       4346]
+NotebookOutlinePosition[    164662,       4362]
+CellTagsIndexPosition[    164619,       4359]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[{
+ RowBox[{"Quit", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Exit", "[", "]"}]}], "Input",
+ CellLabel->"In[11]:=",ExpressionUUID->"6511895a-5ff5-4164-a7b9-e8c12ef3964a"],
+
+Cell[BoxData[
+ RowBox[{"Get", "[", 
+  "\"\</home/claire/policingdemography/policingdemography/policingdemography.\
+wl\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.802520245973906*^9, 3.802520286063998*^9}, {
+   3.802520336138526*^9, 3.802520343708764*^9}, {3.802520445456689*^9, 
+   3.802520453171247*^9}, {3.8025204875618067`*^9, 3.802520510611648*^9}, 
+   3.802521339211632*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"9a45382c-c240-4663-ae0b-95b657da9069"],
+
+Cell[CellGroupData[{
+
+Cell["Selection gradient and other useful functions of the model", "Section",
+ CellChangeTimes->{{3.802588061165496*^9, 
+  3.8025880781763678`*^9}},ExpressionUUID->"86f0fc35-5343-416e-883f-\
+79f64547277c"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sel", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "-", "m"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "m"}], ")"}], " ", 
+       SuperscriptBox["n", "4"], " ", 
+       SuperscriptBox["rb", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"n", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            RowBox[{"C1", " ", "y"}], "+", 
+            RowBox[{"C2", " ", 
+             SuperscriptBox["y", "2"]}], "+", 
+            RowBox[{"Pp", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+            RowBox[{"Pp", " ", "y", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}], "+", 
+         RowBox[{"Bb", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "n"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+           "\[Gamma]"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "2"}], "+", "\[Gamma]"}], ")"}]}]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"C1", " ", "n", " ", "y"}], "+", 
+         RowBox[{"2", " ", "C2", " ", "n", " ", 
+          SuperscriptBox["y", "2"]}], "-", 
+         RowBox[{"n", " ", "Pp", " ", "y", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+         RowBox[{"Bb", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "n"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+           "\[Gamma]"], " ", "\[Gamma]"}], "+", 
+         RowBox[{"n", " ", "Pp", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"], " ", "\[Eta]"}], "-", 
+         RowBox[{"n", " ", "Pp", " ", "y", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"], " ", "\[Eta]"}]}], 
+        ")"}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "m", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", "n"}], ")"}]}], "-", 
+         RowBox[{
+          SuperscriptBox["m", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", "n"}], ")"}]}]}], ")"}], " ", "y", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["n", "2"], "+", 
+          RowBox[{"Bb", " ", "rb", " ", "th", " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "n"}], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+            "\[Gamma]"]}], "-", 
+          RowBox[{"n", " ", "rb", " ", "th", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "1"}], "+", 
+             RowBox[{"C1", " ", "y"}], "+", 
+             RowBox[{"C2", " ", 
+              SuperscriptBox["y", "2"]}], "+", 
+             RowBox[{"Pp", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+             RowBox[{"Pp", " ", "y", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}]}], 
+         ")"}], "4"], " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "m"}], ")"}], "2"], " ", "rb", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              SuperscriptBox["Bb", "2"], " ", "rb", " ", "th", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "n"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+               RowBox[{"2", " ", "\[Gamma]"}]]}], "-", 
+             RowBox[{"2", " ", "Bb", " ", "n", " ", "rb", " ", "th", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "n"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+               "\[Gamma]"], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", 
+                RowBox[{"C1", " ", "y"}], "+", 
+                RowBox[{"C2", " ", 
+                 SuperscriptBox["y", "2"]}], "+", 
+                RowBox[{"Pp", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+                RowBox[{"Pp", " ", "y", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}], 
+             "+", 
+             RowBox[{
+              SuperscriptBox["n", "2"], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"rb", " ", "th", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    RowBox[{"C1", " ", "y"}], "+", 
+                    RowBox[{"C2", " ", 
+                    SuperscriptBox["y", "2"]}], "+", 
+                    RowBox[{"Pp", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+                    RowBox[{"Pp", " ", "y", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}], 
+                  "2"]}], "+", 
+                RowBox[{"Bb", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", "n"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+                  "\[Gamma]"], " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}]}]}], 
+               ")"}]}]}], ")"}]}], 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             SuperscriptBox["n", "2"], "+", 
+             RowBox[{"Bb", " ", "rb", " ", "th", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "n"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+               "\[Gamma]"]}], "-", 
+             RowBox[{"n", " ", "rb", " ", "th", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", 
+                RowBox[{"C1", " ", "y"}], "+", 
+                RowBox[{"C2", " ", 
+                 SuperscriptBox["y", "2"]}], "+", 
+                RowBox[{"Pp", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+                RowBox[{"Pp", " ", "y", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}]}], 
+            ")"}], "2"]]}], ")"}]}], ")"}]}], "-", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["n", "2"], " ", "rb", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"C1", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           RowBox[{"2", " ", "m", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "n"}], ")"}]}], "+", 
+           RowBox[{
+            SuperscriptBox["m", "2"], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "n"}], ")"}]}]}], ")"}], " ", "n", " ",
+          "y"}], "+", 
+        RowBox[{"2", " ", "C2", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           RowBox[{"2", " ", "m", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "n"}], ")"}]}], "+", 
+           RowBox[{
+            SuperscriptBox["m", "2"], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "n"}], ")"}]}]}], ")"}], " ", "n", " ", 
+         SuperscriptBox["y", "2"]}], "+", 
+        RowBox[{"n", " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+        RowBox[{"2", " ", "m", " ", "n", " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "+", 
+        RowBox[{
+         SuperscriptBox["m", "2"], " ", "n", " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "+", 
+        RowBox[{"2", " ", "m", " ", 
+         SuperscriptBox["n", "2"], " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+        RowBox[{
+         SuperscriptBox["m", "2"], " ", 
+         SuperscriptBox["n", "2"], " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "+", 
+        RowBox[{"Bb", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "n"}], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+          "\[Gamma]"], " ", "\[Gamma]"}], "-", 
+        RowBox[{"n", " ", "Pp", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"], " ", "\[Eta]"}], "+", 
+        RowBox[{"n", " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"], " ", "\[Eta]"}]}], 
+       ")"}]}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "-", 
+        RowBox[{"2", " ", "m", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", "n"}], ")"}]}], "+", 
+        RowBox[{
+         SuperscriptBox["m", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", "n"}], ")"}]}]}], ")"}], " ", "y", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["n", "2"], "+", 
+         RowBox[{"Bb", " ", "rb", " ", "th", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "n"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+           "\[Gamma]"]}], "-", 
+         RowBox[{"n", " ", "rb", " ", "th", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            RowBox[{"C1", " ", "y"}], "+", 
+            RowBox[{"C2", " ", 
+             SuperscriptBox["y", "2"]}], "+", 
+            RowBox[{"Pp", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+            RowBox[{"Pp", " ", "y", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}]}], 
+        ")"}], "2"]}]]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"F", "[", 
+    RowBox[{"xm_", ",", "n_", ",", "nr_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", "m"}], ")"}], 
+     RowBox[{"w", "[", 
+      RowBox[{"xm", ",", "xm", ",", "n"}], "]"}], "n"}], "+", 
+    RowBox[{"m", " ", "nr"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"w", "[", 
+    RowBox[{"x_", ",", "xn_", ",", "n_"}], "]"}], ":=", 
+   FractionBox[
+    RowBox[{"re", "[", 
+     RowBox[{"x", ",", "xn", ",", "n"}], "]"}], 
+    RowBox[{"1", "+", 
+     RowBox[{"th", " ", 
+      RowBox[{"re", "[", 
+       RowBox[{"x", ",", "xn", ",", "n"}], "]"}]}]}]]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"re", "[", 
+    RowBox[{"x_", ",", "xn_", ",", "n_"}], "]"}], ":=", 
+   RowBox[{
+    FractionBox["rb", "n"], 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"x", " ", "C1"}], "+", 
+        RowBox[{
+         SuperscriptBox["x", "2"], " ", "C2"}]}], ")"}], "+", 
+      RowBox[{"Bb", 
+       FractionBox[
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"x", "+", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"n", "-", "1"}], ")"}], "xn"}]}], ")"}], 
+           RowBox[{"(", 
+            RowBox[{"1", "-", "p"}], ")"}]}], ")"}], "\[Gamma]"], "n"]}], "-", 
+      RowBox[{"Pp", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", "x"}], ")"}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          FractionBox[
+           RowBox[{"(", 
+            RowBox[{"x", "+", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"n", "-", "1"}], ")"}], "xn"}]}], ")"}], "n"], "p"}], 
+         ")"}], "\[Eta]"]}]}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"monopop", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "y"}], ",", 
+     RowBox[{"xn", "\[Rule]", "y"}], ",", 
+     RowBox[{"xm", "\[Rule]", "y"}], ",", 
+     RowBox[{"nr", "\[Rule]", "n"}], ",", 
+     RowBox[{"r", "\[Rule]", 
+      FractionBox[
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"1", "-", "m"}], ")"}], "2"], 
+       RowBox[{"1", "+", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{"1", "-", "m"}], ")"}], "2"]}], ")"}], 
+         RowBox[{"(", 
+          RowBox[{"n", "-", "1"}], ")"}]}]}]]}], ",", 
+     RowBox[{
+      OverscriptBox["r", "_"], "\[Rule]", 
+      RowBox[{
+       FractionBox["1", "n"], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          FractionBox["1", "n"]}], ")"}], "r"}]}]}]}], "}"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.802523766416671*^9, 3.8025237961118917`*^9}, {
+  3.802524021895219*^9, 3.802524023970738*^9}},
+ Background->RGBColor[0.94, 0.91, 0.88],
+ CellLabel->"In[2]:=",ExpressionUUID->"e36a9b64-4848-4bed-abc9-4dec74615178"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Explore parameter space", "Section",
+ CellChangeTimes->{{3.8025881553463707`*^9, 
+  3.802588171571859*^9}},ExpressionUUID->"b07fca77-26b7-401d-b92f-\
+1aa2337eeaa7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sel", "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Pp", "\[Rule]", "d"}], ",", 
+    RowBox[{"C1", "\[Rule]", "c1"}], ",", 
+    RowBox[{"C2", "\[Rule]", "c2"}], ",", 
+    RowBox[{"Bb", "\[Rule]", "b"}], ",", 
+    RowBox[{"\[Eta]", "\[Rule]", "eta"}], ",", 
+    RowBox[{"\[Gamma]", "\[Rule]", "gamma"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.8025917983073*^9, 3.802591914106256*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"a4439e2f-3f65-4770-86fc-8e30eb181e9d"],
+
+Cell["\<\
+((1 - m)*(m - 1)*n^4*rb^2*(-(b*gamma*((-n)*(p - 1)*y)^gamma) + c1*n*y + \
+2*c2*n*y^2 + 
+     d*eta*n*(p*y)^eta - d*n*y*(p*y)^eta - d*eta*n*y*(p*y)^eta)*
+    (b*(gamma - 2)*((-n)*(p - 1)*y)^gamma + n*(c1*y + c2*y^2 + d*(p*y)^eta - \
+d*y*(p*y)^eta - 
+       1)))/(y*(m^2*(-(n - 1)) + 2*m*(n - 1) + 1)*
+    (b*rb*th*((-n)*(p - 1)*y)^gamma - n*rb*th*(c1*y + c2*y^2 + d*(p*y)^eta - \
+d*y*(p*y)^eta - 
+        1) + n^2)^4*(1 - ((m - 1)^2*rb*(b^2*rb*th*((-n)*(p - 1)*y)^(2*gamma) + 
+        n^2*(b*(gamma - 1)*((-n)*(p - 1)*y)^gamma + rb*th*(c1*y + c2*y^2 + \
+d*(p*y)^eta - 
+             d*y*(p*y)^eta - 1)^2) - 2*b*n*rb*th*((-n)*(p - 1)*y)^gamma*
+         (c1*y + c2*y^2 + d*(p*y)^eta - d*y*(p*y)^eta - 1)))/
+      (b*rb*th*((-n)*(p - 1)*y)^gamma - n*rb*th*(c1*y + c2*y^2 + d*(p*y)^eta \
+- d*y*(p*y)^eta - 
+          1) + n^2)^2)) - (n^2*rb*(b*gamma*((-n)*(p - 1)*y)^gamma + 
+     c1*n*y*(m^2*(n - 1) - 2*m*(n - 1) - 1) + 2*c2*n*y^2*(m^2*(n - 1) - \
+2*m*(n - 1) - 1) - 
+     d*m^2*n^2*y*(p*y)^eta + d*m^2*n*y*(p*y)^eta + 2*d*m*n^2*y*(p*y)^eta - \
+2*d*m*n*y*(p*y)^eta - 
+     d*eta*n*(p*y)^eta + d*n*y*(p*y)^eta + d*eta*n*y*(p*y)^eta))/
+   (y*(m^2*(n - 1) - 2*m*(n - 1) - 1)*(b*rb*th*((-n)*(p - 1)*y)^gamma - 
+      n*rb*th*(c1*y + c2*y^2 + d*(p*y)^eta - d*y*(p*y)^eta - 1) + n^2)^2)\
+\>", "Output",
+ CellChangeTimes->{{3.80259183474025*^9, 3.8025918607920713`*^9}, {
+  3.8025918917081833`*^9, 3.8025919704248037`*^9}},
+ CellLabel->"Out[23]=",ExpressionUUID->"b8a6011b-d01e-4218-903a-c7b2b2f80362"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"search", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.80259266042553*^9, 3.802592662540106*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"7a8582ee-2f0a-4896-a2cb-711c728f3aee"],
+
+Cell[BoxData["0.08430453526392082`"], "Output",
+ CellChangeTimes->{3.8025926632992*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"aca84fda-31a1-4bee-88f6-5f4a1c316863"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"resources", "[", 
+  RowBox[{"0.1", ",", "0.2", ",", "10"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"fitness", "[", 
+  RowBox[{"0.1", ",", "0.2", ",", "10"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"monopopulation", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"grad", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.802591297332428*^9, 3.8025913191732397`*^9}, {
+  3.802591413240081*^9, 3.802591416867038*^9}, {3.80259146199664*^9, 
+  3.802591467625183*^9}, {3.802592262000798*^9, 3.802592262618863*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"def3d281-ae14-4a6c-b952-3c03ddb89de7"],
+
+Cell[BoxData["2.3267000000000007`"], "Output",
+ CellChangeTimes->{
+  3.802591308111773*^9, 3.802591345905531*^9, {3.8025914501258163`*^9, 
+   3.802591468735489*^9}, 3.802591700597989*^9, 3.8025922639778147`*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"7b3d92cf-94bc-4658-b93a-f6b31babd9d1"],
+
+Cell[BoxData["1.8875286978672317`"], "Output",
+ CellChangeTimes->{
+  3.802591308111773*^9, 3.802591345905531*^9, {3.8025914501258163`*^9, 
+   3.802591468735489*^9}, 3.802591700597989*^9, 3.8025922639817*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"a3ec2dfc-7698-4ccd-8857-c8ba34c77778"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+    "policingdemography`Private`x", "\[Rule]", 
+     "policingdemography`Private`y"}], ",", 
+    RowBox[{
+    "policingdemography`Private`xn", "\[Rule]", 
+     "policingdemography`Private`y"}], ",", 
+    RowBox[{
+    "policingdemography`Private`xm", "\[Rule]", 
+     "policingdemography`Private`y"}], ",", 
+    RowBox[{
+    "policingdemography`Private`nr", "\[Rule]", 
+     "policingdemography`Private`n"}], ",", 
+    RowBox[{"policingdemography`Private`r", "\[Rule]", 
+     FractionBox[
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "-", "policingdemography`Private`m"}], ")"}], "2"], 
+      RowBox[{"1", "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"1", "-", "policingdemography`Private`m"}], ")"}], "2"]}],
+          ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "policingdemography`Private`n"}], 
+         ")"}]}]}]]}], ",", 
+    RowBox[{"policingdemography`Private`rbar", "\[Rule]", 
+     RowBox[{
+      FractionBox["1", "policingdemography`Private`n"], "+", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         FractionBox["1", "policingdemography`Private`n"]}], ")"}], " ", 
+       "policingdemography`Private`r"}]}]}]}], "}"}], "[", "]"}]], "Output",
+ CellChangeTimes->{
+  3.802591308111773*^9, 3.802591345905531*^9, {3.8025914501258163`*^9, 
+   3.802591468735489*^9}, 3.802591700597989*^9, 3.802592263987516*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"13c32131-c3a0-45c1-aa09-eeac551214ea"],
+
+Cell[BoxData["0.08430453526392082`"], "Output",
+ CellChangeTimes->{
+  3.802591308111773*^9, 3.802591345905531*^9, {3.8025914501258163`*^9, 
+   3.802591468735489*^9}, 3.802591700597989*^9, 3.802592263994005*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"6280e901-d020-4626-bfad-6f07049d04fb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"pars", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"th", "\[Rule]", "0.1"}], ",", 
+     RowBox[{"rb", "\[Rule]", "20"}], ",", 
+     RowBox[{"C1", "\[Rule]", "0"}], ",", 
+     RowBox[{"C2", "\[Rule]", "0.1"}], ",", 
+     RowBox[{"Bb", "\[Rule]", "2"}], ",", 
+     RowBox[{"Pp", "\[Rule]", "0.3"}], ",", 
+     RowBox[{"p", "\[Rule]", "0.5"}], ",", 
+     RowBox[{"\[Eta]", "\[Rule]", "1"}], ",", 
+     RowBox[{"\[Gamma]", "\[Rule]", "1"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"re", "[", 
+   RowBox[{"0.1", ",", "0.2", ",", "10"}], "]"}], "/.", 
+  "pars"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"w", "[", 
+   RowBox[{"0.1", ",", "0.2", ",", "10"}], "]"}], "/.", 
+  "pars"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sel", "/.", "pars"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"m", "\[Rule]", "0.5"}], ",", 
+    RowBox[{"n", "\[Rule]", "10"}], ",", 
+    RowBox[{"y", "\[Rule]", "0.1"}]}], 
+   "}"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.802591205880332*^9, 3.802591256508214*^9}, {
+  3.802591312136055*^9, 3.802591341258336*^9}, {3.802591422885034*^9, 
+  3.802591446722505*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"45d97a9b-4979-4e01-9eaa-cc14d94aa9a8"],
+
+Cell[BoxData["2.3267000000000007`"], "Output",
+ CellChangeTimes->{{3.802591223636516*^9, 3.8025912585130377`*^9}, 
+   3.8025913422613373`*^9, {3.8025914402355413`*^9, 3.8025914472775097`*^9}, {
+   3.802591731962797*^9, 3.80259173882344*^9}},
+ CellLabel->"Out[16]=",ExpressionUUID->"c5986a60-1ab0-45b5-a0cb-a105a5c9de0b"],
+
+Cell[BoxData["1.8875286978672314`"], "Output",
+ CellChangeTimes->{{3.802591223636516*^9, 3.8025912585130377`*^9}, 
+   3.8025913422613373`*^9, {3.8025914402355413`*^9, 3.8025914472775097`*^9}, {
+   3.802591731962797*^9, 3.802591738824448*^9}},
+ CellLabel->"Out[17]=",ExpressionUUID->"c614e0e1-438b-4be0-b3c7-d1c7d96174d0"],
+
+Cell[BoxData["0.08430453526392082`"], "Output",
+ CellChangeTimes->{{3.802591223636516*^9, 3.8025912585130377`*^9}, 
+   3.8025913422613373`*^9, {3.8025914402355413`*^9, 3.8025914472775097`*^9}, {
+   3.802591731962797*^9, 3.802591738825603*^9}},
+ CellLabel->"Out[18]=",ExpressionUUID->"df80c0a3-2ac3-4715-8633-d726054cadb7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"resources", "[", 
+  RowBox[{"0.1", ",", "0.2", ",", "10"}], "]"}]], "Input",
+ CellChangeTimes->{{3.802590973689147*^9, 3.802590981404972*^9}, {
+  3.8025911244266977`*^9, 3.8025911290120068`*^9}, {3.802591210365694*^9, 
+  3.802591212927862*^9}},ExpressionUUID->"a4fd519e-039e-4d58-8a39-\
+80d263d853d1"],
+
+Cell[BoxData["2.3267000000000007`"], "Output",
+ CellChangeTimes->{3.802590982785041*^9, 3.802591199767935*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"1df81317-6c3e-458f-8f74-38e86076e5df"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"pars", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"th", "\[Rule]", "0.1"}], ",", 
+     RowBox[{"rb", "\[Rule]", "20"}], ",", 
+     RowBox[{"C1", "\[Rule]", "0"}], ",", 
+     RowBox[{"C2", "\[Rule]", "0.1"}], ",", 
+     RowBox[{"Bb", "\[Rule]", "2"}], ",", 
+     RowBox[{"Pp", "\[Rule]", "0.3"}], ",", 
+     RowBox[{"p", "\[Rule]", "0.5"}], ",", 
+     RowBox[{"\[Eta]", "\[Rule]", "1"}], ",", 
+     RowBox[{"\[Gamma]", "\[Rule]", "1"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sel", "/.", "pars"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"m", "\[Rule]", "0.5"}], ",", 
+    RowBox[{"y", "\[Rule]", "0.1"}], ",", 
+    RowBox[{"n", "\[Rule]", "10"}]}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.802590724115266*^9, 3.802590769831897*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"d758a292-3bda-4ece-94ad-c4e9c5e01706"],
+
+Cell[BoxData["0.08430453526392082`"], "Output",
+ CellChangeTimes->{3.802590770762247*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"0b8a20ae-a07d-44c9-9249-d8d1ad2fbff2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"search", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.8025904512667294`*^9, 3.802590453986245*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"85784dc9-71a0-4be9-8103-8fb2bea3760f"],
+
+Cell[BoxData[
+ RowBox[{"-", "0.8827457034450001`"}]], "Output",
+ CellChangeTimes->{3.802590454887969*^9, 3.80259063247441*^9, 
+  3.8025907043216248`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"2dbffcf5-3e17-435a-8c5c-9fe6a14ed2cf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"test", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.80258997798455*^9, 3.802589980183778*^9}, {
+  3.80259012218231*^9, 3.802590124502611*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"dd276aef-3d2b-4bb7-bae2-a59d9d37a49f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"-", "3"}], "}"}]], "Output",
+ CellChangeTimes->{3.8025901262537622`*^9, 3.802590165696249*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"95b6cea4-055e-484a-a030-c20073d2beaf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"2", " ", "x"}], "+", "b"}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"3", " ", "x"}], "+", "c"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.802589933055728*^9, 3.80258993305722*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"14a9f8e9-a7b3-4a6f-ba61-3398650a6bf4"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"x", "\[Rule]", 
+    RowBox[{"b", "-", "c"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.8025899343847647`*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"868af1c7-78e5-40d3-85d6-60d5017f067b"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"pars", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"th", "\[Rule]", "0.1"}], ",", 
+     RowBox[{"rb", "\[Rule]", "20"}], ",", 
+     RowBox[{"C1", "\[Rule]", "0"}], ",", 
+     RowBox[{"C2", "\[Rule]", "0.1"}], ",", 
+     RowBox[{"Bb", "\[Rule]", "2"}], ",", 
+     RowBox[{"Pp", "\[Rule]", "0.3"}], ",", 
+     RowBox[{"p", "\[Rule]", "0.5"}], ",", 
+     RowBox[{"\[Eta]", "\[Rule]", "1"}], ",", 
+     RowBox[{"\[Gamma]", "\[Rule]", "1"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dyn", "=", " ", 
+   RowBox[{
+    RowBox[{"F", "[", 
+     RowBox[{"xm", ",", "n", ",", "nr"}], "]"}], "/.", "monopop"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.80258878009039*^9, 3.802588809583734*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"9505cad6-34f2-4c98-a635-0e81bb5c0705"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ecology", "[", 
+  RowBox[{"dyn", ",", "pars"}], "]"}]], "Input",
+ CellChangeTimes->{{3.802588813390332*^9, 3.802588815438545*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"9cc76555-d185-4dee-a781-4a1c376ce5ba"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"policingdemography`Private`n", "\[Rule]", 
+   RowBox[{
+    RowBox[{"1.`", " ", "m", " ", "n"}], "+", 
+    FractionBox[
+     RowBox[{"20.`", " ", 
+      RowBox[{"(", 
+       RowBox[{"1.`", "\[VeryThinSpace]", "-", 
+        RowBox[{"1.`", " ", "m"}]}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"1.`", "\[VeryThinSpace]", "-", 
+        RowBox[{"0.1`", " ", 
+         SuperscriptBox["y", "2"]}], "+", 
+        FractionBox[
+         RowBox[{"1.`", " ", 
+          RowBox[{"(", 
+           RowBox[{"y", "+", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1.`"}], "+", "n"}], ")"}], " ", "y"}]}], ")"}]}],
+          "n"], "-", 
+        FractionBox[
+         RowBox[{"0.15`", " ", 
+          RowBox[{"(", 
+           RowBox[{"1.`", "\[VeryThinSpace]", "-", 
+            RowBox[{"1.`", " ", "y"}]}], ")"}], " ", 
+          RowBox[{"(", 
+           RowBox[{"y", "+", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1.`"}], "+", "n"}], ")"}], " ", "y"}]}], ")"}]}],
+          "n"]}], ")"}]}], 
+     RowBox[{"1.`", "\[VeryThinSpace]", "+", 
+      FractionBox[
+       RowBox[{"2.`", " ", 
+        RowBox[{"(", 
+         RowBox[{"1.`", "\[VeryThinSpace]", "-", 
+          RowBox[{"0.1`", " ", 
+           SuperscriptBox["y", "2"]}], "+", 
+          FractionBox[
+           RowBox[{"1.`", " ", 
+            RowBox[{"(", 
+             RowBox[{"y", "+", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "1.`"}], "+", "n"}], ")"}], " ", "y"}]}], 
+             ")"}]}], "n"], "-", 
+          FractionBox[
+           RowBox[{"0.15`", " ", 
+            RowBox[{"(", 
+             RowBox[{"1.`", "\[VeryThinSpace]", "-", 
+              RowBox[{"1.`", " ", "y"}]}], ")"}], " ", 
+            RowBox[{"(", 
+             RowBox[{"y", "+", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "1.`"}], "+", "n"}], ")"}], " ", "y"}]}], 
+             ")"}]}], "n"]}], ")"}]}], "n"]}]]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.802588824894107*^9, 3.802588914386915*^9, 
+  3.802588992476403*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"1607ffbf-a095-4a0c-8158-7b0b734def14"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Flatten", "[", 
+  RowBox[{"NSolve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"n", "\[Equal]", "dyn"}], ")"}], "/.", "pars"}], ",", "n"}], 
+   "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.802589126289937*^9, 3.802589132435965*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"6a26e88c-9ac5-4288-a652-5de6a07a2059"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"n", "\[Rule]", "0.`"}], ",", 
+   RowBox[{"n", "\[Rule]", 
+    RowBox[{"0.9`", " ", 
+     RowBox[{"(", 
+      RowBox[{"20.`", "\[VeryThinSpace]", "+", 
+       RowBox[{"17.`", " ", "y"}], "+", 
+       SuperscriptBox["y", "2"]}], ")"}]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.802589133621586*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"d255f400-bfa7-4651-8241-a01ff593b13d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"pars", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"th", "\[Rule]", "0.1"}], ",", 
+     RowBox[{"rb", "\[Rule]", "20"}], ",", 
+     RowBox[{"C1", "\[Rule]", "0"}], ",", 
+     RowBox[{"C2", "\[Rule]", "0.1"}], ",", 
+     RowBox[{"Bb", "\[Rule]", "2"}], ",", 
+     RowBox[{"Pp", "\[Rule]", "0.3"}], ",", 
+     RowBox[{"p", "\[Rule]", "0.5"}], ",", 
+     RowBox[{"\[Eta]", "\[Rule]", "1"}], ",", 
+     RowBox[{"\[Gamma]", "\[Rule]", "1"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"dummy", "[", 
+  RowBox[{"sel", ",", "pars"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.802520602906021*^9, 3.8025206059682703`*^9}, {
+   3.802520700114525*^9, 3.8025207215725718`*^9}, 3.802522050473979*^9, {
+   3.802523825140345*^9, 3.8025238456288147`*^9}, {3.8025240674686747`*^9, 
+   3.802524076524105*^9}, 3.802524509317849*^9, 3.802588184490231*^9, {
+   3.802588223508624*^9, 3.802588229030285*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"3e32b4d5-e16b-4f6e-aa50-018b1d5f08c7"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"20", " ", "n", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"0.05000000000000002`", " ", 
+        RowBox[{"(", 
+         RowBox[{"16.999999999999993`", "\[VeryThinSpace]", "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"1.999999999999999`", "\[VeryThinSpace]", "+", 
+             RowBox[{"m", " ", 
+              RowBox[{"(", 
+               RowBox[{"2.`", "\[VeryThinSpace]", "-", 
+                RowBox[{"2.`", " ", "n"}]}], ")"}]}], "+", 
+             RowBox[{
+              SuperscriptBox["m", "2"], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1.`"}], "+", 
+                RowBox[{"1.`", " ", "n"}]}], ")"}]}]}], ")"}], " ", "y"}]}], 
+         ")"}], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"2.`", "\[VeryThinSpace]", "+", "n", "+", 
+           RowBox[{"1.7`", " ", "y"}], "+", 
+           RowBox[{"0.09999999999999998`", " ", 
+            SuperscriptBox["y", "2"]}]}], ")"}], "2"]}], 
+       RowBox[{
+        RowBox[{"-", "1.`"}], "+", 
+        RowBox[{"m", " ", 
+         RowBox[{"(", 
+          RowBox[{"2.`", "\[VeryThinSpace]", "-", 
+           RowBox[{"2.`", " ", "n"}]}], ")"}]}], "+", 
+        RowBox[{
+         SuperscriptBox["m", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1.`"}], "+", "n"}], ")"}]}]}]]}], "+", 
+     FractionBox[
+      RowBox[{"20", " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", "m"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "m"}], ")"}], " ", "n", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "0.85`"}], "-", 
+         RowBox[{"0.09999999999999998`", " ", "y"}]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1.`"}], "-", 
+         RowBox[{"0.85`", " ", "y"}], "-", 
+         RowBox[{"0.04999999999999999`", " ", 
+          SuperscriptBox["y", "2"]}]}], ")"}]}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "m", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", "n"}], ")"}]}], "-", 
+         RowBox[{
+          SuperscriptBox["m", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", "n"}], ")"}]}]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         FractionBox[
+          RowBox[{"0.09999999999999995`", " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1.`"}], "+", "m"}], ")"}], "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{"400.0000000000002`", "\[VeryThinSpace]", "+", 
+             RowBox[{"680.0000000000003`", " ", "y"}], "+", 
+             RowBox[{"329.0000000000001`", " ", 
+              SuperscriptBox["y", "2"]}], "+", 
+             RowBox[{"34.00000000000001`", " ", 
+              SuperscriptBox["y", "3"]}], "+", 
+             RowBox[{"1.`", " ", 
+              SuperscriptBox["y", "4"]}]}], ")"}]}], 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"2.`", "\[VeryThinSpace]", "+", "n", "+", 
+             RowBox[{"1.7`", " ", "y"}], "+", 
+             RowBox[{"0.09999999999999998`", " ", 
+              SuperscriptBox["y", "2"]}]}], ")"}], "2"]]}], ")"}]}]]}], 
+    ")"}]}], 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"2.`", "\[VeryThinSpace]", "+", "n", "+", 
+     RowBox[{"1.7`", " ", "y"}], "+", 
+     RowBox[{"0.09999999999999998`", " ", 
+      SuperscriptBox["y", "2"]}]}], ")"}], "4"]]], "Output",
+ CellChangeTimes->{3.802524077043565*^9, 3.8025241210740223`*^9, 
+  3.802524379493794*^9, 3.802588231343069*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"f123b162-bd96-4708-8899-ef216306100b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"pars", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"th", "\[Rule]", "0.1"}], ",", 
+     RowBox[{"rb", "\[Rule]", "20"}], ",", 
+     RowBox[{"C1", "\[Rule]", "0"}], ",", 
+     RowBox[{"C2", "\[Rule]", "0.1"}], ",", 
+     RowBox[{"Bb", "\[Rule]", "2"}], ",", 
+     RowBox[{"Pp", "\[Rule]", "0.3"}], ",", 
+     RowBox[{"p", "\[Rule]", "0.5"}], ",", 
+     RowBox[{"\[Eta]", "\[Rule]", "1"}], ",", 
+     RowBox[{"\[Gamma]", "\[Rule]", "1"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f", "=", " ", 
+   RowBox[{
+    RowBox[{"F", "[", 
+     RowBox[{"xm", ",", "n", ",", "nr"}], "]"}], "/.", "monopop"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"dothecoolstuff", "[", 
+  RowBox[{"sel", ",", "f", ",", "pars"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.802524314834652*^9, 3.802524317115727*^9}, {
+   3.8025245129553213`*^9, 3.802524544201109*^9}, 3.8025246275114183`*^9, {
+   3.802588243609667*^9, 3.802588259870043*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"b676f4f1-9703-4db3-ade0-edf79b61d825"],
+
+Cell[BoxData[
+ RowBox[{"dothecoolstuff", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "-", "m"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "m"}], ")"}], " ", 
+       SuperscriptBox["n", "4"], " ", 
+       SuperscriptBox["rb", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"n", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            RowBox[{"C1", " ", "y"}], "+", 
+            RowBox[{"C2", " ", 
+             SuperscriptBox["y", "2"]}], "+", 
+            RowBox[{"Pp", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+            RowBox[{"Pp", " ", "y", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}], "+", 
+         RowBox[{"Bb", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "n"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+           "\[Gamma]"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "2"}], "+", "\[Gamma]"}], ")"}]}]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"C1", " ", "n", " ", "y"}], "+", 
+         RowBox[{"2", " ", "C2", " ", "n", " ", 
+          SuperscriptBox["y", "2"]}], "-", 
+         RowBox[{"n", " ", "Pp", " ", "y", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+         RowBox[{"Bb", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "n"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+           "\[Gamma]"], " ", "\[Gamma]"}], "+", 
+         RowBox[{"n", " ", "Pp", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"], " ", "\[Eta]"}], "-", 
+         RowBox[{"n", " ", "Pp", " ", "y", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"], " ", "\[Eta]"}]}], 
+        ")"}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "m", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", "n"}], ")"}]}], "-", 
+         RowBox[{
+          SuperscriptBox["m", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", "n"}], ")"}]}]}], ")"}], " ", "y", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["n", "2"], "+", 
+          RowBox[{"Bb", " ", "rb", " ", "th", " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "n"}], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+            "\[Gamma]"]}], "-", 
+          RowBox[{"n", " ", "rb", " ", "th", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "1"}], "+", 
+             RowBox[{"C1", " ", "y"}], "+", 
+             RowBox[{"C2", " ", 
+              SuperscriptBox["y", "2"]}], "+", 
+             RowBox[{"Pp", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+             RowBox[{"Pp", " ", "y", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}]}], 
+         ")"}], "4"], " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "m"}], ")"}], "2"], " ", "rb", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              SuperscriptBox["Bb", "2"], " ", "rb", " ", "th", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "n"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+               RowBox[{"2", " ", "\[Gamma]"}]]}], "-", 
+             RowBox[{"2", " ", "Bb", " ", "n", " ", "rb", " ", "th", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "n"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+               "\[Gamma]"], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", 
+                RowBox[{"C1", " ", "y"}], "+", 
+                RowBox[{"C2", " ", 
+                 SuperscriptBox["y", "2"]}], "+", 
+                RowBox[{"Pp", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+                RowBox[{"Pp", " ", "y", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}], 
+             "+", 
+             RowBox[{
+              SuperscriptBox["n", "2"], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"rb", " ", "th", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    RowBox[{"C1", " ", "y"}], "+", 
+                    RowBox[{"C2", " ", 
+                    SuperscriptBox["y", "2"]}], "+", 
+                    RowBox[{"Pp", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+                    RowBox[{"Pp", " ", "y", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}], 
+                  "2"]}], "+", 
+                RowBox[{"Bb", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", "n"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+                  "\[Gamma]"], " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}]}]}], 
+               ")"}]}]}], ")"}]}], 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             SuperscriptBox["n", "2"], "+", 
+             RowBox[{"Bb", " ", "rb", " ", "th", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "n"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+               "\[Gamma]"]}], "-", 
+             RowBox[{"n", " ", "rb", " ", "th", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", 
+                RowBox[{"C1", " ", "y"}], "+", 
+                RowBox[{"C2", " ", 
+                 SuperscriptBox["y", "2"]}], "+", 
+                RowBox[{"Pp", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+                RowBox[{"Pp", " ", "y", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}]}], 
+            ")"}], "2"]]}], ")"}]}], ")"}]}], "-", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["n", "2"], " ", "rb", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"C1", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           RowBox[{"2", " ", "m", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "n"}], ")"}]}], "+", 
+           RowBox[{
+            SuperscriptBox["m", "2"], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "n"}], ")"}]}]}], ")"}], " ", "n", " ",
+          "y"}], "+", 
+        RowBox[{"2", " ", "C2", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           RowBox[{"2", " ", "m", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "n"}], ")"}]}], "+", 
+           RowBox[{
+            SuperscriptBox["m", "2"], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "n"}], ")"}]}]}], ")"}], " ", "n", " ", 
+         SuperscriptBox["y", "2"]}], "+", 
+        RowBox[{"n", " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+        RowBox[{"2", " ", "m", " ", "n", " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "+", 
+        RowBox[{
+         SuperscriptBox["m", "2"], " ", "n", " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "+", 
+        RowBox[{"2", " ", "m", " ", 
+         SuperscriptBox["n", "2"], " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+        RowBox[{
+         SuperscriptBox["m", "2"], " ", 
+         SuperscriptBox["n", "2"], " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "+", 
+        RowBox[{"Bb", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "n"}], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+          "\[Gamma]"], " ", "\[Gamma]"}], "-", 
+        RowBox[{"n", " ", "Pp", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"], " ", "\[Eta]"}], "+", 
+        RowBox[{"n", " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"], " ", "\[Eta]"}]}], 
+       ")"}]}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "-", 
+        RowBox[{"2", " ", "m", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", "n"}], ")"}]}], "+", 
+        RowBox[{
+         SuperscriptBox["m", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", "n"}], ")"}]}]}], ")"}], " ", "y", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["n", "2"], "+", 
+         RowBox[{"Bb", " ", "rb", " ", "th", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "n"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+           "\[Gamma]"]}], "-", 
+         RowBox[{"n", " ", "rb", " ", "th", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            RowBox[{"C1", " ", "y"}], "+", 
+            RowBox[{"C2", " ", 
+             SuperscriptBox["y", "2"]}], "+", 
+            RowBox[{"Pp", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+            RowBox[{"Pp", " ", "y", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}]}], 
+        ")"}], "2"]}]]}], ",", 
+   RowBox[{
+    RowBox[{"m", " ", "n"}], "+", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "-", "m"}], ")"}], " ", "rb", " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        RowBox[{"C1", " ", "y"}], "-", 
+        RowBox[{"C2", " ", 
+         SuperscriptBox["y", "2"]}], "+", 
+        FractionBox[
+         RowBox[{"Bb", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"1", "-", "p"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"y", "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "n"}], ")"}], " ", "y"}]}], 
+              ")"}]}], ")"}], "\[Gamma]"]}], "n"], "-", 
+        RowBox[{"Pp", " ", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", "y"}], ")"}], " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           FractionBox[
+            RowBox[{"p", " ", 
+             RowBox[{"(", 
+              RowBox[{"y", "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "n"}], ")"}], " ", "y"}]}], 
+              ")"}]}], "n"], ")"}], "\[Eta]"]}]}], ")"}]}], 
+     RowBox[{"1", "+", 
+      FractionBox[
+       RowBox[{"rb", " ", "th", " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{"C1", " ", "y"}], "-", 
+          RowBox[{"C2", " ", 
+           SuperscriptBox["y", "2"]}], "+", 
+          FractionBox[
+           RowBox[{"Bb", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"1", "-", "p"}], ")"}], " ", 
+               RowBox[{"(", 
+                RowBox[{"y", "+", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", "1"}], "+", "n"}], ")"}], " ", "y"}]}], 
+                ")"}]}], ")"}], "\[Gamma]"]}], "n"], "-", 
+          RowBox[{"Pp", " ", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", "y"}], ")"}], " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             FractionBox[
+              RowBox[{"p", " ", 
+               RowBox[{"(", 
+                RowBox[{"y", "+", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", "1"}], "+", "n"}], ")"}], " ", "y"}]}], 
+                ")"}]}], "n"], ")"}], "\[Eta]"]}]}], ")"}]}], "n"]}]]}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"th", "\[Rule]", "0.1`"}], ",", 
+     RowBox[{"rb", "\[Rule]", "20"}], ",", 
+     RowBox[{"C1", "\[Rule]", "0"}], ",", 
+     RowBox[{"C2", "\[Rule]", "0.1`"}], ",", 
+     RowBox[{"Bb", "\[Rule]", "2"}], ",", 
+     RowBox[{"Pp", "\[Rule]", "0.3`"}], ",", 
+     RowBox[{"p", "\[Rule]", "0.5`"}], ",", 
+     RowBox[{"\[Eta]", "\[Rule]", "1"}], ",", 
+     RowBox[{"\[Gamma]", "\[Rule]", "1"}]}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.8025882608614492`*^9, 3.802588668852687*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"31d40f3d-056a-4f84-b3d0-bad67facdb28"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["f"], "Input",
+ CellChangeTimes->{3.802588287671138*^9},
+ CellLabel->"In[12]:=",ExpressionUUID->"33d61530-afd4-49b4-bf5b-856f512638cb"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m", " ", "n"}], "+", 
+  FractionBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "-", "m"}], ")"}], " ", "rb", " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"C1", " ", "y"}], "-", 
+      RowBox[{"C2", " ", 
+       SuperscriptBox["y", "2"]}], "+", 
+      FractionBox[
+       RowBox[{"Bb", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"1", "-", "p"}], ")"}], " ", 
+           RowBox[{"(", 
+            RowBox[{"y", "+", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "n"}], ")"}], " ", "y"}]}], ")"}]}], 
+          ")"}], "\[Gamma]"]}], "n"], "-", 
+      RowBox[{"Pp", " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", "y"}], ")"}], " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         FractionBox[
+          RowBox[{"p", " ", 
+           RowBox[{"(", 
+            RowBox[{"y", "+", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "n"}], ")"}], " ", "y"}]}], ")"}]}], 
+          "n"], ")"}], "\[Eta]"]}]}], ")"}]}], 
+   RowBox[{"1", "+", 
+    FractionBox[
+     RowBox[{"rb", " ", "th", " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        RowBox[{"C1", " ", "y"}], "-", 
+        RowBox[{"C2", " ", 
+         SuperscriptBox["y", "2"]}], "+", 
+        FractionBox[
+         RowBox[{"Bb", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"1", "-", "p"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"y", "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "n"}], ")"}], " ", "y"}]}], 
+              ")"}]}], ")"}], "\[Gamma]"]}], "n"], "-", 
+        RowBox[{"Pp", " ", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", "y"}], ")"}], " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           FractionBox[
+            RowBox[{"p", " ", 
+             RowBox[{"(", 
+              RowBox[{"y", "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "n"}], ")"}], " ", "y"}]}], 
+              ")"}]}], "n"], ")"}], "\[Eta]"]}]}], ")"}]}], 
+     "n"]}]]}]], "Output",
+ CellChangeTimes->{3.80258828864507*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"d8f686b8-8afd-4236-a8f6-d76eb768b212"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dothecoolstuff", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"a", " ", "x"}], "+", "b"}], ",", 
+   RowBox[{"m", " ", "n"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "0.3"}], ",", 
+     RowBox[{"m", "\[Rule]", "0.5"}], ",", 
+     RowBox[{"b", "\[Rule]", "5"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.802588268117426*^9, 3.8025883190185432`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"a16ba4b0-8c39-4921-9ed1-dbb2fec60308"],
+
+Cell[BoxData[
+ RowBox[{"dothecoolstuff", "[", 
+  RowBox[{
+   RowBox[{"b", "+", 
+    RowBox[{"a", " ", "x"}]}], ",", 
+   RowBox[{"m", " ", "n"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "0.3`"}], ",", 
+     RowBox[{"m", "\[Rule]", "0.5`"}], ",", 
+     RowBox[{"b", "\[Rule]", "5"}]}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.802588320332312*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"c8d203b3-1013-4856-98cc-9956bc14ce03"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.802524633799429*^9, 
+  3.802524639937796*^9}},ExpressionUUID->"3b38da85-4cdd-47c0-a089-\
+f99d03b171b8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.802524558264557*^9, 3.802524565853867*^9}, {
+   3.80252464511973*^9, 3.8025246559168463`*^9}, 
+   3.802588247841593*^9},ExpressionUUID->"682666ea-d740-490d-86de-\
+84e6f530735d"],
+
+Cell[BoxData[
+ RowBox[{"dothecoolstuff", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "-", "m"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "m"}], ")"}], " ", 
+       SuperscriptBox["n", "4"], " ", 
+       SuperscriptBox["rb", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"n", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            RowBox[{"C1", " ", "y"}], "+", 
+            RowBox[{"C2", " ", 
+             SuperscriptBox["y", "2"]}], "+", 
+            RowBox[{"Pp", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+            RowBox[{"Pp", " ", "y", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}], "+", 
+         RowBox[{"Bb", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "n"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+           "\[Gamma]"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "2"}], "+", "\[Gamma]"}], ")"}]}]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"C1", " ", "n", " ", "y"}], "+", 
+         RowBox[{"2", " ", "C2", " ", "n", " ", 
+          SuperscriptBox["y", "2"]}], "-", 
+         RowBox[{"n", " ", "Pp", " ", "y", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+         RowBox[{"Bb", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "n"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+           "\[Gamma]"], " ", "\[Gamma]"}], "+", 
+         RowBox[{"n", " ", "Pp", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"], " ", "\[Eta]"}], "-", 
+         RowBox[{"n", " ", "Pp", " ", "y", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"], " ", "\[Eta]"}]}], 
+        ")"}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{"2", " ", "m", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", "n"}], ")"}]}], "-", 
+         RowBox[{
+          SuperscriptBox["m", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", "n"}], ")"}]}]}], ")"}], " ", "y", " ", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["n", "2"], "+", 
+          RowBox[{"Bb", " ", "rb", " ", "th", " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "n"}], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+            "\[Gamma]"]}], "-", 
+          RowBox[{"n", " ", "rb", " ", "th", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "1"}], "+", 
+             RowBox[{"C1", " ", "y"}], "+", 
+             RowBox[{"C2", " ", 
+              SuperscriptBox["y", "2"]}], "+", 
+             RowBox[{"Pp", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+             RowBox[{"Pp", " ", "y", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}]}], 
+         ")"}], "4"], " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "m"}], ")"}], "2"], " ", "rb", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              SuperscriptBox["Bb", "2"], " ", "rb", " ", "th", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "n"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+               RowBox[{"2", " ", "\[Gamma]"}]]}], "-", 
+             RowBox[{"2", " ", "Bb", " ", "n", " ", "rb", " ", "th", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "n"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+               "\[Gamma]"], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", 
+                RowBox[{"C1", " ", "y"}], "+", 
+                RowBox[{"C2", " ", 
+                 SuperscriptBox["y", "2"]}], "+", 
+                RowBox[{"Pp", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+                RowBox[{"Pp", " ", "y", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}], 
+             "+", 
+             RowBox[{
+              SuperscriptBox["n", "2"], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"rb", " ", "th", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", "1"}], "+", 
+                    RowBox[{"C1", " ", "y"}], "+", 
+                    RowBox[{"C2", " ", 
+                    SuperscriptBox["y", "2"]}], "+", 
+                    RowBox[{"Pp", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+                    RowBox[{"Pp", " ", "y", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}], 
+                  "2"]}], "+", 
+                RowBox[{"Bb", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", "n"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+                  "\[Gamma]"], " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", "\[Gamma]"}], ")"}]}]}], 
+               ")"}]}]}], ")"}]}], 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             SuperscriptBox["n", "2"], "+", 
+             RowBox[{"Bb", " ", "rb", " ", "th", " ", 
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "n"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+               "\[Gamma]"]}], "-", 
+             RowBox[{"n", " ", "rb", " ", "th", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", 
+                RowBox[{"C1", " ", "y"}], "+", 
+                RowBox[{"C2", " ", 
+                 SuperscriptBox["y", "2"]}], "+", 
+                RowBox[{"Pp", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+                RowBox[{"Pp", " ", "y", " ", 
+                 SuperscriptBox[
+                  RowBox[{"(", 
+                   RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}]}], 
+            ")"}], "2"]]}], ")"}]}], ")"}]}], "-", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["n", "2"], " ", "rb", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"C1", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           RowBox[{"2", " ", "m", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "n"}], ")"}]}], "+", 
+           RowBox[{
+            SuperscriptBox["m", "2"], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "n"}], ")"}]}]}], ")"}], " ", "n", " ",
+          "y"}], "+", 
+        RowBox[{"2", " ", "C2", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "-", 
+           RowBox[{"2", " ", "m", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "n"}], ")"}]}], "+", 
+           RowBox[{
+            SuperscriptBox["m", "2"], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "n"}], ")"}]}]}], ")"}], " ", "n", " ", 
+         SuperscriptBox["y", "2"]}], "+", 
+        RowBox[{"n", " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+        RowBox[{"2", " ", "m", " ", "n", " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "+", 
+        RowBox[{
+         SuperscriptBox["m", "2"], " ", "n", " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "+", 
+        RowBox[{"2", " ", "m", " ", 
+         SuperscriptBox["n", "2"], " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+        RowBox[{
+         SuperscriptBox["m", "2"], " ", 
+         SuperscriptBox["n", "2"], " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "+", 
+        RowBox[{"Bb", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "n"}], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+          "\[Gamma]"], " ", "\[Gamma]"}], "-", 
+        RowBox[{"n", " ", "Pp", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"], " ", "\[Eta]"}], "+", 
+        RowBox[{"n", " ", "Pp", " ", "y", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"], " ", "\[Eta]"}]}], 
+       ")"}]}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "-", 
+        RowBox[{"2", " ", "m", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", "n"}], ")"}]}], "+", 
+        RowBox[{
+         SuperscriptBox["m", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", "n"}], ")"}]}]}], ")"}], " ", "y", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["n", "2"], "+", 
+         RowBox[{"Bb", " ", "rb", " ", "th", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "n"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "p"}], ")"}], " ", "y"}], ")"}], 
+           "\[Gamma]"]}], "-", 
+         RowBox[{"n", " ", "rb", " ", "th", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            RowBox[{"C1", " ", "y"}], "+", 
+            RowBox[{"C2", " ", 
+             SuperscriptBox["y", "2"]}], "+", 
+            RowBox[{"Pp", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}], "-", 
+            RowBox[{"Pp", " ", "y", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"p", " ", "y"}], ")"}], "\[Eta]"]}]}], ")"}]}]}], 
+        ")"}], "2"]}]]}], ",", 
+   RowBox[{
+    RowBox[{"m", " ", "n"}], "+", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "-", "m"}], ")"}], " ", "rb", " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        RowBox[{"C1", " ", "y"}], "-", 
+        RowBox[{"C2", " ", 
+         SuperscriptBox["y", "2"]}], "+", 
+        FractionBox[
+         RowBox[{"Bb", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"1", "-", "p"}], ")"}], " ", 
+             RowBox[{"(", 
+              RowBox[{"y", "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "n"}], ")"}], " ", "y"}]}], 
+              ")"}]}], ")"}], "\[Gamma]"]}], "n"], "-", 
+        RowBox[{"Pp", " ", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", "y"}], ")"}], " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           FractionBox[
+            RowBox[{"p", " ", 
+             RowBox[{"(", 
+              RowBox[{"y", "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "n"}], ")"}], " ", "y"}]}], 
+              ")"}]}], "n"], ")"}], "\[Eta]"]}]}], ")"}]}], 
+     RowBox[{"1", "+", 
+      FractionBox[
+       RowBox[{"rb", " ", "th", " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{"C1", " ", "y"}], "-", 
+          RowBox[{"C2", " ", 
+           SuperscriptBox["y", "2"]}], "+", 
+          FractionBox[
+           RowBox[{"Bb", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"1", "-", "p"}], ")"}], " ", 
+               RowBox[{"(", 
+                RowBox[{"y", "+", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", "1"}], "+", "n"}], ")"}], " ", "y"}]}], 
+                ")"}]}], ")"}], "\[Gamma]"]}], "n"], "-", 
+          RowBox[{"Pp", " ", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", "y"}], ")"}], " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             FractionBox[
+              RowBox[{"p", " ", 
+               RowBox[{"(", 
+                RowBox[{"y", "+", 
+                 RowBox[{
+                  RowBox[{"(", 
+                   RowBox[{
+                    RowBox[{"-", "1"}], "+", "n"}], ")"}], " ", "y"}]}], 
+                ")"}]}], "n"], ")"}], "\[Eta]"]}]}], ")"}]}], "n"]}]]}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"th", "\[Rule]", "0.1`"}], ",", 
+     RowBox[{"rb", "\[Rule]", "20"}], ",", 
+     RowBox[{"C1", "\[Rule]", "0"}], ",", 
+     RowBox[{"C2", "\[Rule]", "0.1`"}], ",", 
+     RowBox[{"Bb", "\[Rule]", "2"}], ",", 
+     RowBox[{"Pp", "\[Rule]", "0.3`"}], ",", 
+     RowBox[{"p", "\[Rule]", "0.5`"}], ",", 
+     RowBox[{"\[Eta]", "\[Rule]", "1"}], ",", 
+     RowBox[{"\[Gamma]", "\[Rule]", "1"}]}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.802524568183836*^9, 3.802524657804205*^9, 
+  3.802524762925344*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"a1624a91-dac1-424c-85a3-9571faa405d6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"numericEcology", "[", 
+  RowBox[{"f", ",", "pars2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.80252135515388*^9, 3.8025213578455*^9}, {
+  3.802522040474753*^9, 3.802522059616475*^9}, {3.802523617498901*^9, 
+  3.802523648758821*^9}, {3.8025236845167227`*^9, 3.802523687531501*^9}, {
+  3.8025237280465307`*^9, 3.80252372884639*^9}, {3.802523871596286*^9, 
+  3.802523888250764*^9}, {3.8025243869734297`*^9, 3.802524390496579*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"25354f15-c40c-4844-8748-7620349c2997"],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Return", "[", "policingdemography`Private`n", "]"}], 
+  "]"}]], "Output",
+ CellChangeTimes->{
+  3.8025221307918453`*^9, 3.802523814362434*^9, 3.802523852641615*^9, {
+   3.8025238848362293`*^9, 3.802523889002619*^9}, 3.8025240349352703`*^9, 
+   3.802524391372615*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"1c048c5c-fdfd-404e-ae17-b5457f2c2e2c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gradient", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.8025232577846537`*^9, 3.802523261255875*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"d2030629-cabd-4c4c-8b7d-88f715f46e52"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["policingdemography`Private`rb", "2"], " ", 
+       "policingdemography`Private`th", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["policingdemography`Private`y", "2"], "+", 
+         RowBox[{"policingdemography`Private`c2", " ", 
+          SuperscriptBox["policingdemography`Private`y", "4"]}], "+", 
+         RowBox[{
+         "policingdemography`Private`d", " ", 
+          "policingdemography`Private`eta", " ", 
+          "policingdemography`Private`y", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+            "policingdemography`Private`p", " ", 
+             "policingdemography`Private`y"}], ")"}], 
+           "policingdemography`Private`eta"]}], "-", 
+         RowBox[{"policingdemography`Private`d", " ", 
+          RowBox[{"(", 
+           RowBox[{"1", "+", "policingdemography`Private`eta"}], ")"}], " ", 
+          SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+            "policingdemography`Private`p", " ", 
+             "policingdemography`Private`y"}], ")"}], 
+           "policingdemography`Private`eta"]}], "-", 
+         RowBox[{
+         "policingdemography`Private`b", " ", 
+          "policingdemography`Private`gamma", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+               ")"}]}], " ", 
+             SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+           "policingdemography`Private`gamma"]}], "-", 
+         RowBox[{"policingdemography`Private`b", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "2"}], "+", "policingdemography`Private`gamma"}], 
+           ")"}], " ", "policingdemography`Private`y", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+               ")"}]}], " ", 
+             SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+           "policingdemography`Private`gamma"]}]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"policingdemography`Private`c2", " ", 
+          SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+         RowBox[{"policingdemography`Private`b", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+               ")"}]}], " ", 
+             SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+           "policingdemography`Private`gamma"]}], "+", 
+         RowBox[{
+          SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{"policingdemography`Private`c1", "-", 
+            RowBox[{"policingdemography`Private`d", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+               "policingdemography`Private`p", " ", 
+                "policingdemography`Private`y"}], ")"}], 
+              "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+         RowBox[{"policingdemography`Private`y", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            RowBox[{"policingdemography`Private`d", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+               "policingdemography`Private`p", " ", 
+                "policingdemography`Private`y"}], ")"}], 
+              "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}], 
+      ")"}], "/", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["policingdemography`Private`y", "3"], "-", 
+        RowBox[{
+        "policingdemography`Private`rb", " ", "policingdemography`Private`th",
+          " ", "policingdemography`Private`y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"policingdemography`Private`c2", " ", 
+            SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+           RowBox[{"policingdemography`Private`b", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+                 ")"}]}], " ", 
+               SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+             "policingdemography`Private`gamma"]}], "+", 
+           RowBox[{
+            SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+            RowBox[{"(", 
+             RowBox[{"policingdemography`Private`c1", "-", 
+              RowBox[{"policingdemography`Private`d", " ", 
+               SuperscriptBox[
+                RowBox[{"(", 
+                 RowBox[{
+                 "policingdemography`Private`p", " ", 
+                  "policingdemography`Private`y"}], ")"}], 
+                "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+           RowBox[{"policingdemography`Private`y", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", 
+              RowBox[{"policingdemography`Private`d", " ", 
+               SuperscriptBox[
+                RowBox[{"(", 
+                 RowBox[{
+                 "policingdemography`Private`p", " ", 
+                  "policingdemography`Private`y"}], ")"}], 
+                "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}]}], 
+       ")"}], "2"]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"policingdemography`Private`rb", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"policingdemography`Private`c2", " ", 
+        SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+       RowBox[{"policingdemography`Private`b", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}]}], " ", 
+           SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+         "policingdemography`Private`gamma"]}], "+", 
+       RowBox[{
+        SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{"policingdemography`Private`c1", "-", 
+          RowBox[{"policingdemography`Private`d", " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+             "policingdemography`Private`p", " ", 
+              "policingdemography`Private`y"}], ")"}], 
+            "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+       RowBox[{"policingdemography`Private`y", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          RowBox[{"policingdemography`Private`d", " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+             "policingdemography`Private`p", " ", 
+              "policingdemography`Private`y"}], ")"}], 
+            "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}], ")"}], 
+   "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["policingdemography`Private`y", "3"]}], "+", 
+     RowBox[{
+     "policingdemography`Private`rb", " ", "policingdemography`Private`th", 
+      " ", "policingdemography`Private`y", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"policingdemography`Private`c2", " ", 
+         SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+        RowBox[{"policingdemography`Private`b", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+              ")"}]}], " ", 
+            SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+          "policingdemography`Private`gamma"]}], "+", 
+        RowBox[{
+         SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"policingdemography`Private`c1", "-", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+        RowBox[{"policingdemography`Private`y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}]}], 
+    ")"}]}], "+", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"policingdemography`Private`rb", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"policingdemography`Private`c1", " ", 
+        SuperscriptBox["policingdemography`Private`y", "3"]}], "+", 
+       RowBox[{"2", " ", "policingdemography`Private`c2", " ", 
+        SuperscriptBox["policingdemography`Private`y", "4"]}], "+", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`eta", 
+        " ", "policingdemography`Private`y", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`eta", 
+        " ", 
+        SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{"policingdemography`Private`d", " ", 
+        SuperscriptBox["policingdemography`Private`y", "3"], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`b", " ", 
+        "policingdemography`Private`gamma", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}]}], " ", 
+           SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+         "policingdemography`Private`gamma"]}], "+", 
+       RowBox[{
+       "policingdemography`Private`b", " ", "policingdemography`Private`y", 
+        " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}]}], " ", 
+           SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+         "policingdemography`Private`gamma"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`b", " ", 
+        "policingdemography`Private`gamma", " ", 
+        "policingdemography`Private`y", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}]}], " ", 
+           SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+         "policingdemography`Private`gamma"]}]}], ")"}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["policingdemography`Private`y", "4"]}], "+", 
+     RowBox[{
+     "policingdemography`Private`rb", " ", "policingdemography`Private`th", 
+      " ", 
+      SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"policingdemography`Private`c2", " ", 
+         SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+        RowBox[{"policingdemography`Private`b", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+              ")"}]}], " ", 
+            SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+          "policingdemography`Private`gamma"]}], "+", 
+        RowBox[{
+         SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"policingdemography`Private`c1", "-", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+        RowBox[{"policingdemography`Private`y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}]}], 
+    ")"}]}], "+", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", "policingdemography`Private`m"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "policingdemography`Private`m"}], ")"}], " ", 
+     
+     SuperscriptBox["policingdemography`Private`n", "4"], " ", 
+     "policingdemography`Private`rb", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+       "policingdemography`Private`c1", " ", "policingdemography`Private`n", 
+        " ", "policingdemography`Private`y"}], "+", 
+       RowBox[{
+       "2", " ", "policingdemography`Private`c2", " ", 
+        "policingdemography`Private`n", " ", 
+        SuperscriptBox["policingdemography`Private`y", "2"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`b", " ", 
+        "policingdemography`Private`gamma", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "policingdemography`Private`n"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], ")"}],
+            " ", "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`gamma"]}], "+", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`eta", 
+        " ", "policingdemography`Private`n", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`n", 
+        " ", "policingdemography`Private`y", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`eta", 
+        " ", "policingdemography`Private`n", " ", 
+        "policingdemography`Private`y", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}]}], ")"}], " ", 
+     RowBox[{
+      SuperscriptBox["policingdemography`Private`w", 
+       TagBox[
+        RowBox[{"(", 
+         RowBox[{"0", ",", "0", ",", "1"}], ")"}],
+        Derivative],
+       MultilineFunction->None], "[", 
+      RowBox[{
+      "policingdemography`Private`y", ",", "policingdemography`Private`y", 
+       ",", "policingdemography`Private`n"}], "]"}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       RowBox[{"2", " ", "policingdemography`Private`m", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "policingdemography`Private`n"}], ")"}]}], 
+       "-", 
+       RowBox[{
+        SuperscriptBox["policingdemography`Private`m", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "policingdemography`Private`n"}], 
+         ")"}]}]}], ")"}], " ", "policingdemography`Private`y", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["policingdemography`Private`n", "2"], "+", 
+        RowBox[{
+        "policingdemography`Private`b", " ", "policingdemography`Private`rb", 
+         " ", "policingdemography`Private`th", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "policingdemography`Private`n"}], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+          "policingdemography`Private`gamma"]}], "-", 
+        RowBox[{
+        "policingdemography`Private`n", " ", "policingdemography`Private`rb", 
+         " ", "policingdemography`Private`th", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           RowBox[{
+           "policingdemography`Private`c1", " ", 
+            "policingdemography`Private`y"}], "+", 
+           RowBox[{"policingdemography`Private`c2", " ", 
+            SuperscriptBox["policingdemography`Private`y", "2"]}], "+", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}], "-", 
+           RowBox[{
+           "policingdemography`Private`d", " ", 
+            "policingdemography`Private`y", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}], "2"], 
+     " ", 
+     RowBox[{"(", 
+      RowBox[{"policingdemography`Private`n", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "1"}], "+", "policingdemography`Private`m"}], ")"}],
+            "2"], " ", "policingdemography`Private`n", " ", 
+          "policingdemography`Private`rb", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             SuperscriptBox["policingdemography`Private`b", "2"], " ", 
+             "policingdemography`Private`rb", " ", 
+             "policingdemography`Private`th", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "policingdemography`Private`n"}], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+                 ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+              RowBox[{"2", " ", "policingdemography`Private`gamma"}]]}], "-", 
+            
+            RowBox[{
+            "2", " ", "policingdemography`Private`b", " ", 
+             "policingdemography`Private`n", " ", 
+             "policingdemography`Private`rb", " ", 
+             "policingdemography`Private`th", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "policingdemography`Private`n"}], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+                 ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+              "policingdemography`Private`gamma"], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", 
+               RowBox[{
+               "policingdemography`Private`c1", " ", 
+                "policingdemography`Private`y"}], "+", 
+               RowBox[{"policingdemography`Private`c2", " ", 
+                SuperscriptBox["policingdemography`Private`y", "2"]}], "+", 
+               RowBox[{"policingdemography`Private`d", " ", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{
+                  "policingdemography`Private`p", " ", 
+                   "policingdemography`Private`y"}], ")"}], 
+                 "policingdemography`Private`eta"]}], "-", 
+               RowBox[{
+               "policingdemography`Private`d", " ", 
+                "policingdemography`Private`y", " ", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{
+                  "policingdemography`Private`p", " ", 
+                   "policingdemography`Private`y"}], ")"}], 
+                 "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+            RowBox[{
+             SuperscriptBox["policingdemography`Private`n", "2"], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"policingdemography`Private`b", " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", 
+                  "policingdemography`Private`gamma"}], ")"}], " ", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "policingdemography`Private`n"}], " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}],
+                     ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+                 "policingdemography`Private`gamma"]}], "+", 
+               RowBox[{
+               "policingdemography`Private`rb", " ", 
+                "policingdemography`Private`th", " ", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", 
+                   RowBox[{
+                   "policingdemography`Private`c1", " ", 
+                    "policingdemography`Private`y"}], "+", 
+                   RowBox[{"policingdemography`Private`c2", " ", 
+                    SuperscriptBox["policingdemography`Private`y", "2"]}], 
+                   "+", 
+                   RowBox[{"policingdemography`Private`d", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    "policingdemography`Private`p", " ", 
+                    "policingdemography`Private`y"}], ")"}], 
+                    "policingdemography`Private`eta"]}], "-", 
+                   RowBox[{
+                   "policingdemography`Private`d", " ", 
+                    "policingdemography`Private`y", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    "policingdemography`Private`p", " ", 
+                    "policingdemography`Private`y"}], ")"}], 
+                    "policingdemography`Private`eta"]}]}], ")"}], "2"]}]}], 
+              ")"}]}]}], ")"}]}], ")"}], "/", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["policingdemography`Private`n", "2"], "+", 
+           RowBox[{
+           "policingdemography`Private`b", " ", 
+            "policingdemography`Private`rb", " ", 
+            "policingdemography`Private`th", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "policingdemography`Private`n"}], " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+                ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`gamma"]}], "-", 
+           RowBox[{
+           "policingdemography`Private`n", " ", 
+            "policingdemography`Private`rb", " ", 
+            "policingdemography`Private`th", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", 
+              RowBox[{
+              "policingdemography`Private`c1", " ", 
+               "policingdemography`Private`y"}], "+", 
+              RowBox[{"policingdemography`Private`c2", " ", 
+               SuperscriptBox["policingdemography`Private`y", "2"]}], "+", 
+              RowBox[{"policingdemography`Private`d", " ", 
+               SuperscriptBox[
+                RowBox[{"(", 
+                 RowBox[{
+                 "policingdemography`Private`p", " ", 
+                  "policingdemography`Private`y"}], ")"}], 
+                "policingdemography`Private`eta"]}], "-", 
+              RowBox[{
+              "policingdemography`Private`d", " ", 
+               "policingdemography`Private`y", " ", 
+               SuperscriptBox[
+                RowBox[{"(", 
+                 RowBox[{
+                 "policingdemography`Private`p", " ", 
+                  "policingdemography`Private`y"}], ")"}], 
+                "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}], 
+         "2"]}]}], ")"}]}], ")"}]}], "-", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "policingdemography`Private`m"}], ")"}], "2"],
+     " ", 
+    RowBox[{
+     SuperscriptBox["policingdemography`Private`w", 
+      TagBox[
+       RowBox[{"(", 
+        RowBox[{"0", ",", "1", ",", "0"}], ")"}],
+       Derivative],
+      MultilineFunction->None], "[", 
+     RowBox[{
+     "policingdemography`Private`y", ",", "policingdemography`Private`y", ",",
+       "policingdemography`Private`n"}], "]"}]}], 
+   RowBox[{
+    RowBox[{"-", "1"}], "-", 
+    RowBox[{"2", " ", "policingdemography`Private`m", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "policingdemography`Private`n"}], ")"}]}], 
+    "+", 
+    RowBox[{
+     SuperscriptBox["policingdemography`Private`m", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "policingdemography`Private`n"}], 
+      ")"}]}]}]]}]], "Output",
+ CellChangeTimes->{3.802523296736075*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"eeeec3c0-2d75-4e9f-8315-65c07de2134f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dummy", "[", 
+  RowBox[{"selectionGradient", ",", "pars2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8025222447839537`*^9, 3.8025222506548986`*^9}, {
+  3.802523187864362*^9, 3.802523197698226*^9}, {3.8025232334218693`*^9, 
+  3.802523235616283*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"a682123d-7e0e-4399-b67e-62b6d3f1c371"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["policingdemography`Private`rb", "2"], " ", 
+       "policingdemography`Private`th", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["policingdemography`Private`y", "2"], "+", 
+         RowBox[{"policingdemography`Private`c2", " ", 
+          SuperscriptBox["policingdemography`Private`y", "4"]}], "+", 
+         RowBox[{
+         "policingdemography`Private`d", " ", 
+          "policingdemography`Private`eta", " ", 
+          "policingdemography`Private`y", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+            "policingdemography`Private`p", " ", 
+             "policingdemography`Private`y"}], ")"}], 
+           "policingdemography`Private`eta"]}], "-", 
+         RowBox[{"policingdemography`Private`d", " ", 
+          RowBox[{"(", 
+           RowBox[{"1", "+", "policingdemography`Private`eta"}], ")"}], " ", 
+          SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+            "policingdemography`Private`p", " ", 
+             "policingdemography`Private`y"}], ")"}], 
+           "policingdemography`Private`eta"]}], "-", 
+         RowBox[{
+         "policingdemography`Private`b", " ", 
+          "policingdemography`Private`gamma", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+               ")"}]}], " ", 
+             SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+           "policingdemography`Private`gamma"]}], "-", 
+         RowBox[{"policingdemography`Private`b", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "2"}], "+", "policingdemography`Private`gamma"}], 
+           ")"}], " ", "policingdemography`Private`y", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+               ")"}]}], " ", 
+             SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+           "policingdemography`Private`gamma"]}]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"policingdemography`Private`c2", " ", 
+          SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+         RowBox[{"policingdemography`Private`b", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+               ")"}]}], " ", 
+             SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+           "policingdemography`Private`gamma"]}], "+", 
+         RowBox[{
+          SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{"policingdemography`Private`c1", "-", 
+            RowBox[{"policingdemography`Private`d", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+               "policingdemography`Private`p", " ", 
+                "policingdemography`Private`y"}], ")"}], 
+              "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+         RowBox[{"policingdemography`Private`y", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            RowBox[{"policingdemography`Private`d", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+               "policingdemography`Private`p", " ", 
+                "policingdemography`Private`y"}], ")"}], 
+              "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}], 
+      ")"}], "/", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["policingdemography`Private`y", "3"], "-", 
+        RowBox[{
+        "policingdemography`Private`rb", " ", "policingdemography`Private`th",
+          " ", "policingdemography`Private`y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"policingdemography`Private`c2", " ", 
+            SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+           RowBox[{"policingdemography`Private`b", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+                 ")"}]}], " ", 
+               SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+             "policingdemography`Private`gamma"]}], "+", 
+           RowBox[{
+            SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+            RowBox[{"(", 
+             RowBox[{"policingdemography`Private`c1", "-", 
+              RowBox[{"policingdemography`Private`d", " ", 
+               SuperscriptBox[
+                RowBox[{"(", 
+                 RowBox[{
+                 "policingdemography`Private`p", " ", 
+                  "policingdemography`Private`y"}], ")"}], 
+                "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+           RowBox[{"policingdemography`Private`y", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", 
+              RowBox[{"policingdemography`Private`d", " ", 
+               SuperscriptBox[
+                RowBox[{"(", 
+                 RowBox[{
+                 "policingdemography`Private`p", " ", 
+                  "policingdemography`Private`y"}], ")"}], 
+                "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}]}], 
+       ")"}], "2"]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"policingdemography`Private`rb", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"policingdemography`Private`c2", " ", 
+        SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+       RowBox[{"policingdemography`Private`b", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}]}], " ", 
+           SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+         "policingdemography`Private`gamma"]}], "+", 
+       RowBox[{
+        SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{"policingdemography`Private`c1", "-", 
+          RowBox[{"policingdemography`Private`d", " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+             "policingdemography`Private`p", " ", 
+              "policingdemography`Private`y"}], ")"}], 
+            "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+       RowBox[{"policingdemography`Private`y", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          RowBox[{"policingdemography`Private`d", " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+             "policingdemography`Private`p", " ", 
+              "policingdemography`Private`y"}], ")"}], 
+            "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}], ")"}], 
+   "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["policingdemography`Private`y", "3"]}], "+", 
+     RowBox[{
+     "policingdemography`Private`rb", " ", "policingdemography`Private`th", 
+      " ", "policingdemography`Private`y", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"policingdemography`Private`c2", " ", 
+         SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+        RowBox[{"policingdemography`Private`b", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+              ")"}]}], " ", 
+            SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+          "policingdemography`Private`gamma"]}], "+", 
+        RowBox[{
+         SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"policingdemography`Private`c1", "-", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+        RowBox[{"policingdemography`Private`y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}]}], 
+    ")"}]}], "+", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"policingdemography`Private`rb", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"policingdemography`Private`c1", " ", 
+        SuperscriptBox["policingdemography`Private`y", "3"]}], "+", 
+       RowBox[{"2", " ", "policingdemography`Private`c2", " ", 
+        SuperscriptBox["policingdemography`Private`y", "4"]}], "+", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`eta", 
+        " ", "policingdemography`Private`y", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`eta", 
+        " ", 
+        SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{"policingdemography`Private`d", " ", 
+        SuperscriptBox["policingdemography`Private`y", "3"], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`b", " ", 
+        "policingdemography`Private`gamma", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}]}], " ", 
+           SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+         "policingdemography`Private`gamma"]}], "+", 
+       RowBox[{
+       "policingdemography`Private`b", " ", "policingdemography`Private`y", 
+        " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}]}], " ", 
+           SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+         "policingdemography`Private`gamma"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`b", " ", 
+        "policingdemography`Private`gamma", " ", 
+        "policingdemography`Private`y", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}]}], " ", 
+           SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+         "policingdemography`Private`gamma"]}]}], ")"}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["policingdemography`Private`y", "4"]}], "+", 
+     RowBox[{
+     "policingdemography`Private`rb", " ", "policingdemography`Private`th", 
+      " ", 
+      SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"policingdemography`Private`c2", " ", 
+         SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+        RowBox[{"policingdemography`Private`b", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+              ")"}]}], " ", 
+            SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+          "policingdemography`Private`gamma"]}], "+", 
+        RowBox[{
+         SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"policingdemography`Private`c1", "-", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+        RowBox[{"policingdemography`Private`y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}]}], 
+    ")"}]}], "+", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", "policingdemography`Private`m"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "policingdemography`Private`m"}], ")"}], " ", 
+     
+     SuperscriptBox["policingdemography`Private`n", "4"], " ", 
+     "policingdemography`Private`rb", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+       "policingdemography`Private`c1", " ", "policingdemography`Private`n", 
+        " ", "policingdemography`Private`y"}], "+", 
+       RowBox[{
+       "2", " ", "policingdemography`Private`c2", " ", 
+        "policingdemography`Private`n", " ", 
+        SuperscriptBox["policingdemography`Private`y", "2"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`b", " ", 
+        "policingdemography`Private`gamma", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "policingdemography`Private`n"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], ")"}],
+            " ", "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`gamma"]}], "+", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`eta", 
+        " ", "policingdemography`Private`n", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`n", 
+        " ", "policingdemography`Private`y", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`eta", 
+        " ", "policingdemography`Private`n", " ", 
+        "policingdemography`Private`y", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}]}], ")"}], " ", 
+     RowBox[{
+      SuperscriptBox["policingdemography`Private`w", 
+       TagBox[
+        RowBox[{"(", 
+         RowBox[{"0", ",", "0", ",", "1"}], ")"}],
+        Derivative],
+       MultilineFunction->None], "[", 
+      RowBox[{
+      "policingdemography`Private`y", ",", "policingdemography`Private`y", 
+       ",", "policingdemography`Private`n"}], "]"}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       RowBox[{"2", " ", "policingdemography`Private`m", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "policingdemography`Private`n"}], ")"}]}], 
+       "-", 
+       RowBox[{
+        SuperscriptBox["policingdemography`Private`m", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "policingdemography`Private`n"}], 
+         ")"}]}]}], ")"}], " ", "policingdemography`Private`y", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["policingdemography`Private`n", "2"], "+", 
+        RowBox[{
+        "policingdemography`Private`b", " ", "policingdemography`Private`rb", 
+         " ", "policingdemography`Private`th", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "policingdemography`Private`n"}], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+          "policingdemography`Private`gamma"]}], "-", 
+        RowBox[{
+        "policingdemography`Private`n", " ", "policingdemography`Private`rb", 
+         " ", "policingdemography`Private`th", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           RowBox[{
+           "policingdemography`Private`c1", " ", 
+            "policingdemography`Private`y"}], "+", 
+           RowBox[{"policingdemography`Private`c2", " ", 
+            SuperscriptBox["policingdemography`Private`y", "2"]}], "+", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}], "-", 
+           RowBox[{
+           "policingdemography`Private`d", " ", 
+            "policingdemography`Private`y", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}], "2"], 
+     " ", 
+     RowBox[{"(", 
+      RowBox[{"policingdemography`Private`n", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "1"}], "+", "policingdemography`Private`m"}], ")"}],
+            "2"], " ", "policingdemography`Private`n", " ", 
+          "policingdemography`Private`rb", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             SuperscriptBox["policingdemography`Private`b", "2"], " ", 
+             "policingdemography`Private`rb", " ", 
+             "policingdemography`Private`th", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "policingdemography`Private`n"}], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+                 ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+              RowBox[{"2", " ", "policingdemography`Private`gamma"}]]}], "-", 
+            
+            RowBox[{
+            "2", " ", "policingdemography`Private`b", " ", 
+             "policingdemography`Private`n", " ", 
+             "policingdemography`Private`rb", " ", 
+             "policingdemography`Private`th", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "policingdemography`Private`n"}], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+                 ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+              "policingdemography`Private`gamma"], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", 
+               RowBox[{
+               "policingdemography`Private`c1", " ", 
+                "policingdemography`Private`y"}], "+", 
+               RowBox[{"policingdemography`Private`c2", " ", 
+                SuperscriptBox["policingdemography`Private`y", "2"]}], "+", 
+               RowBox[{"policingdemography`Private`d", " ", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{
+                  "policingdemography`Private`p", " ", 
+                   "policingdemography`Private`y"}], ")"}], 
+                 "policingdemography`Private`eta"]}], "-", 
+               RowBox[{
+               "policingdemography`Private`d", " ", 
+                "policingdemography`Private`y", " ", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{
+                  "policingdemography`Private`p", " ", 
+                   "policingdemography`Private`y"}], ")"}], 
+                 "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+            RowBox[{
+             SuperscriptBox["policingdemography`Private`n", "2"], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"policingdemography`Private`b", " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", 
+                  "policingdemography`Private`gamma"}], ")"}], " ", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "policingdemography`Private`n"}], " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}],
+                     ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+                 "policingdemography`Private`gamma"]}], "+", 
+               RowBox[{
+               "policingdemography`Private`rb", " ", 
+                "policingdemography`Private`th", " ", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", 
+                   RowBox[{
+                   "policingdemography`Private`c1", " ", 
+                    "policingdemography`Private`y"}], "+", 
+                   RowBox[{"policingdemography`Private`c2", " ", 
+                    SuperscriptBox["policingdemography`Private`y", "2"]}], 
+                   "+", 
+                   RowBox[{"policingdemography`Private`d", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    "policingdemography`Private`p", " ", 
+                    "policingdemography`Private`y"}], ")"}], 
+                    "policingdemography`Private`eta"]}], "-", 
+                   RowBox[{
+                   "policingdemography`Private`d", " ", 
+                    "policingdemography`Private`y", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    "policingdemography`Private`p", " ", 
+                    "policingdemography`Private`y"}], ")"}], 
+                    "policingdemography`Private`eta"]}]}], ")"}], "2"]}]}], 
+              ")"}]}]}], ")"}]}], ")"}], "/", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["policingdemography`Private`n", "2"], "+", 
+           RowBox[{
+           "policingdemography`Private`b", " ", 
+            "policingdemography`Private`rb", " ", 
+            "policingdemography`Private`th", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "policingdemography`Private`n"}], " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+                ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`gamma"]}], "-", 
+           RowBox[{
+           "policingdemography`Private`n", " ", 
+            "policingdemography`Private`rb", " ", 
+            "policingdemography`Private`th", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", 
+              RowBox[{
+              "policingdemography`Private`c1", " ", 
+               "policingdemography`Private`y"}], "+", 
+              RowBox[{"policingdemography`Private`c2", " ", 
+               SuperscriptBox["policingdemography`Private`y", "2"]}], "+", 
+              RowBox[{"policingdemography`Private`d", " ", 
+               SuperscriptBox[
+                RowBox[{"(", 
+                 RowBox[{
+                 "policingdemography`Private`p", " ", 
+                  "policingdemography`Private`y"}], ")"}], 
+                "policingdemography`Private`eta"]}], "-", 
+              RowBox[{
+              "policingdemography`Private`d", " ", 
+               "policingdemography`Private`y", " ", 
+               SuperscriptBox[
+                RowBox[{"(", 
+                 RowBox[{
+                 "policingdemography`Private`p", " ", 
+                  "policingdemography`Private`y"}], ")"}], 
+                "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}], 
+         "2"]}]}], ")"}]}], ")"}]}], "-", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "policingdemography`Private`m"}], ")"}], "2"],
+     " ", 
+    RowBox[{
+     SuperscriptBox["policingdemography`Private`w", 
+      TagBox[
+       RowBox[{"(", 
+        RowBox[{"0", ",", "1", ",", "0"}], ")"}],
+       Derivative],
+      MultilineFunction->None], "[", 
+     RowBox[{
+     "policingdemography`Private`y", ",", "policingdemography`Private`y", ",",
+       "policingdemography`Private`n"}], "]"}]}], 
+   RowBox[{
+    RowBox[{"-", "1"}], "-", 
+    RowBox[{"2", " ", "policingdemography`Private`m", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "policingdemography`Private`n"}], ")"}]}], 
+    "+", 
+    RowBox[{
+     SuperscriptBox["policingdemography`Private`m", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "policingdemography`Private`n"}], 
+      ")"}]}]}]]}]], "Output",
+ CellChangeTimes->{3.802522251085012*^9, 3.802522318447328*^9, 
+  3.802522856520473*^9, 3.8025231990259323`*^9, 3.802523241948453*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"941e3ecd-7b4a-4216-9391-ea9282fcc977"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"selectionGradient", "\[Equal]", 
+  RowBox[{"dummy", "[", "pars2", "]"}]}]], "Input",
+ CellChangeTimes->{{3.802522740721138*^9, 3.8025227804904633`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"d91a953e-8673-459a-9e9d-a5facc5da3f0"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.802522794153799*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"88b27286-80a9-4abc-b64a-947d341feb48"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.802522775160594*^9, 
+  3.802522776791979*^9}},ExpressionUUID->"76e0f34c-06c9-44de-8958-\
+2be79657f98d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["policingdemography`Private`rb", "2"], " ", 
+       "policingdemography`Private`th", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["policingdemography`Private`y", "2"], "+", 
+         RowBox[{"policingdemography`Private`c2", " ", 
+          SuperscriptBox["policingdemography`Private`y", "4"]}], "+", 
+         RowBox[{
+         "policingdemography`Private`d", " ", 
+          "policingdemography`Private`eta", " ", 
+          "policingdemography`Private`y", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+            "policingdemography`Private`p", " ", 
+             "policingdemography`Private`y"}], ")"}], 
+           "policingdemography`Private`eta"]}], "-", 
+         RowBox[{"policingdemography`Private`d", " ", 
+          RowBox[{"(", 
+           RowBox[{"1", "+", "policingdemography`Private`eta"}], ")"}], " ", 
+          SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+            "policingdemography`Private`p", " ", 
+             "policingdemography`Private`y"}], ")"}], 
+           "policingdemography`Private`eta"]}], "-", 
+         RowBox[{
+         "policingdemography`Private`b", " ", 
+          "policingdemography`Private`gamma", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+               ")"}]}], " ", 
+             SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+           "policingdemography`Private`gamma"]}], "-", 
+         RowBox[{"policingdemography`Private`b", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "2"}], "+", "policingdemography`Private`gamma"}], 
+           ")"}], " ", "policingdemography`Private`y", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+               ")"}]}], " ", 
+             SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+           "policingdemography`Private`gamma"]}]}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"policingdemography`Private`c2", " ", 
+          SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+         RowBox[{"policingdemography`Private`b", " ", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+               ")"}]}], " ", 
+             SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+           "policingdemography`Private`gamma"]}], "+", 
+         RowBox[{
+          SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{"policingdemography`Private`c1", "-", 
+            RowBox[{"policingdemography`Private`d", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+               "policingdemography`Private`p", " ", 
+                "policingdemography`Private`y"}], ")"}], 
+              "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+         RowBox[{"policingdemography`Private`y", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            RowBox[{"policingdemography`Private`d", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+               "policingdemography`Private`p", " ", 
+                "policingdemography`Private`y"}], ")"}], 
+              "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}], 
+      ")"}], "/", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["policingdemography`Private`y", "3"], "-", 
+        RowBox[{
+        "policingdemography`Private`rb", " ", "policingdemography`Private`th",
+          " ", "policingdemography`Private`y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"policingdemography`Private`c2", " ", 
+            SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+           RowBox[{"policingdemography`Private`b", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+                 ")"}]}], " ", 
+               SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+             "policingdemography`Private`gamma"]}], "+", 
+           RowBox[{
+            SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+            RowBox[{"(", 
+             RowBox[{"policingdemography`Private`c1", "-", 
+              RowBox[{"policingdemography`Private`d", " ", 
+               SuperscriptBox[
+                RowBox[{"(", 
+                 RowBox[{
+                 "policingdemography`Private`p", " ", 
+                  "policingdemography`Private`y"}], ")"}], 
+                "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+           RowBox[{"policingdemography`Private`y", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", 
+              RowBox[{"policingdemography`Private`d", " ", 
+               SuperscriptBox[
+                RowBox[{"(", 
+                 RowBox[{
+                 "policingdemography`Private`p", " ", 
+                  "policingdemography`Private`y"}], ")"}], 
+                "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}]}], 
+       ")"}], "2"]}], ")"}]}], "-", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"policingdemography`Private`rb", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"policingdemography`Private`c2", " ", 
+        SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+       RowBox[{"policingdemography`Private`b", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}]}], " ", 
+           SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+         "policingdemography`Private`gamma"]}], "+", 
+       RowBox[{
+        SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{"policingdemography`Private`c1", "-", 
+          RowBox[{"policingdemography`Private`d", " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+             "policingdemography`Private`p", " ", 
+              "policingdemography`Private`y"}], ")"}], 
+            "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+       RowBox[{"policingdemography`Private`y", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          RowBox[{"policingdemography`Private`d", " ", 
+           SuperscriptBox[
+            RowBox[{"(", 
+             RowBox[{
+             "policingdemography`Private`p", " ", 
+              "policingdemography`Private`y"}], ")"}], 
+            "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}], ")"}], 
+   "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["policingdemography`Private`y", "3"]}], "+", 
+     RowBox[{
+     "policingdemography`Private`rb", " ", "policingdemography`Private`th", 
+      " ", "policingdemography`Private`y", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"policingdemography`Private`c2", " ", 
+         SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+        RowBox[{"policingdemography`Private`b", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+              ")"}]}], " ", 
+            SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+          "policingdemography`Private`gamma"]}], "+", 
+        RowBox[{
+         SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"policingdemography`Private`c1", "-", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+        RowBox[{"policingdemography`Private`y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}]}], 
+    ")"}]}], "+", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"policingdemography`Private`rb", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"policingdemography`Private`c1", " ", 
+        SuperscriptBox["policingdemography`Private`y", "3"]}], "+", 
+       RowBox[{"2", " ", "policingdemography`Private`c2", " ", 
+        SuperscriptBox["policingdemography`Private`y", "4"]}], "+", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`eta", 
+        " ", "policingdemography`Private`y", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`eta", 
+        " ", 
+        SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{"policingdemography`Private`d", " ", 
+        SuperscriptBox["policingdemography`Private`y", "3"], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`b", " ", 
+        "policingdemography`Private`gamma", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}]}], " ", 
+           SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+         "policingdemography`Private`gamma"]}], "+", 
+       RowBox[{
+       "policingdemography`Private`b", " ", "policingdemography`Private`y", 
+        " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}]}], " ", 
+           SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+         "policingdemography`Private`gamma"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`b", " ", 
+        "policingdemography`Private`gamma", " ", 
+        "policingdemography`Private`y", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}]}], " ", 
+           SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+         "policingdemography`Private`gamma"]}]}], ")"}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["policingdemography`Private`y", "4"]}], "+", 
+     RowBox[{
+     "policingdemography`Private`rb", " ", "policingdemography`Private`th", 
+      " ", 
+      SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"policingdemography`Private`c2", " ", 
+         SuperscriptBox["policingdemography`Private`y", "3"]}], "-", 
+        RowBox[{"policingdemography`Private`b", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+              ")"}]}], " ", 
+            SuperscriptBox["policingdemography`Private`y", "2"]}], ")"}], 
+          "policingdemography`Private`gamma"]}], "+", 
+        RowBox[{
+         SuperscriptBox["policingdemography`Private`y", "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"policingdemography`Private`c1", "-", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+        RowBox[{"policingdemography`Private`y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}]}]}], 
+    ")"}]}], "+", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", "policingdemography`Private`m"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "policingdemography`Private`m"}], ")"}], " ", 
+     
+     SuperscriptBox["policingdemography`Private`n", "4"], " ", 
+     "policingdemography`Private`rb", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+       "policingdemography`Private`c1", " ", "policingdemography`Private`n", 
+        " ", "policingdemography`Private`y"}], "+", 
+       RowBox[{
+       "2", " ", "policingdemography`Private`c2", " ", 
+        "policingdemography`Private`n", " ", 
+        SuperscriptBox["policingdemography`Private`y", "2"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`b", " ", 
+        "policingdemography`Private`gamma", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "policingdemography`Private`n"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], ")"}],
+            " ", "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`gamma"]}], "+", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`eta", 
+        " ", "policingdemography`Private`n", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`n", 
+        " ", "policingdemography`Private`y", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}], "-", 
+       RowBox[{
+       "policingdemography`Private`d", " ", "policingdemography`Private`eta", 
+        " ", "policingdemography`Private`n", " ", 
+        "policingdemography`Private`y", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+          "policingdemography`Private`p", " ", 
+           "policingdemography`Private`y"}], ")"}], 
+         "policingdemography`Private`eta"]}]}], ")"}], " ", 
+     RowBox[{
+      SuperscriptBox["policingdemography`Private`w", 
+       TagBox[
+        RowBox[{"(", 
+         RowBox[{"0", ",", "0", ",", "1"}], ")"}],
+        Derivative],
+       MultilineFunction->None], "[", 
+      RowBox[{
+      "policingdemography`Private`y", ",", "policingdemography`Private`y", 
+       ",", "policingdemography`Private`n"}], "]"}]}], ")"}], "/", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       RowBox[{"2", " ", "policingdemography`Private`m", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "policingdemography`Private`n"}], ")"}]}], 
+       "-", 
+       RowBox[{
+        SuperscriptBox["policingdemography`Private`m", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "1"}], "+", "policingdemography`Private`n"}], 
+         ")"}]}]}], ")"}], " ", "policingdemography`Private`y", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["policingdemography`Private`n", "2"], "+", 
+        RowBox[{
+        "policingdemography`Private`b", " ", "policingdemography`Private`rb", 
+         " ", "policingdemography`Private`th", " ", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "policingdemography`Private`n"}], " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+             ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+          "policingdemography`Private`gamma"]}], "-", 
+        RowBox[{
+        "policingdemography`Private`n", " ", "policingdemography`Private`rb", 
+         " ", "policingdemography`Private`th", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "1"}], "+", 
+           RowBox[{
+           "policingdemography`Private`c1", " ", 
+            "policingdemography`Private`y"}], "+", 
+           RowBox[{"policingdemography`Private`c2", " ", 
+            SuperscriptBox["policingdemography`Private`y", "2"]}], "+", 
+           RowBox[{"policingdemography`Private`d", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}], "-", 
+           RowBox[{
+           "policingdemography`Private`d", " ", 
+            "policingdemography`Private`y", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+              "policingdemography`Private`p", " ", 
+               "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}], "2"], 
+     " ", 
+     RowBox[{"(", 
+      RowBox[{"policingdemography`Private`n", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", "1"}], "+", "policingdemography`Private`m"}], ")"}],
+            "2"], " ", "policingdemography`Private`n", " ", 
+          "policingdemography`Private`rb", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             SuperscriptBox["policingdemography`Private`b", "2"], " ", 
+             "policingdemography`Private`rb", " ", 
+             "policingdemography`Private`th", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "policingdemography`Private`n"}], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+                 ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+              RowBox[{"2", " ", "policingdemography`Private`gamma"}]]}], "-", 
+            
+            RowBox[{
+            "2", " ", "policingdemography`Private`b", " ", 
+             "policingdemography`Private`n", " ", 
+             "policingdemography`Private`rb", " ", 
+             "policingdemography`Private`th", " ", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "policingdemography`Private`n"}], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+                 ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+              "policingdemography`Private`gamma"], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "1"}], "+", 
+               RowBox[{
+               "policingdemography`Private`c1", " ", 
+                "policingdemography`Private`y"}], "+", 
+               RowBox[{"policingdemography`Private`c2", " ", 
+                SuperscriptBox["policingdemography`Private`y", "2"]}], "+", 
+               RowBox[{"policingdemography`Private`d", " ", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{
+                  "policingdemography`Private`p", " ", 
+                   "policingdemography`Private`y"}], ")"}], 
+                 "policingdemography`Private`eta"]}], "-", 
+               RowBox[{
+               "policingdemography`Private`d", " ", 
+                "policingdemography`Private`y", " ", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{
+                  "policingdemography`Private`p", " ", 
+                   "policingdemography`Private`y"}], ")"}], 
+                 "policingdemography`Private`eta"]}]}], ")"}]}], "+", 
+            RowBox[{
+             SuperscriptBox["policingdemography`Private`n", "2"], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"policingdemography`Private`b", " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "1"}], "+", 
+                  "policingdemography`Private`gamma"}], ")"}], " ", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "policingdemography`Private`n"}], " ", 
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}],
+                     ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+                 "policingdemography`Private`gamma"]}], "+", 
+               RowBox[{
+               "policingdemography`Private`rb", " ", 
+                "policingdemography`Private`th", " ", 
+                SuperscriptBox[
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], "+", 
+                   RowBox[{
+                   "policingdemography`Private`c1", " ", 
+                    "policingdemography`Private`y"}], "+", 
+                   RowBox[{"policingdemography`Private`c2", " ", 
+                    SuperscriptBox["policingdemography`Private`y", "2"]}], 
+                   "+", 
+                   RowBox[{"policingdemography`Private`d", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    "policingdemography`Private`p", " ", 
+                    "policingdemography`Private`y"}], ")"}], 
+                    "policingdemography`Private`eta"]}], "-", 
+                   RowBox[{
+                   "policingdemography`Private`d", " ", 
+                    "policingdemography`Private`y", " ", 
+                    SuperscriptBox[
+                    RowBox[{"(", 
+                    RowBox[{
+                    "policingdemography`Private`p", " ", 
+                    "policingdemography`Private`y"}], ")"}], 
+                    "policingdemography`Private`eta"]}]}], ")"}], "2"]}]}], 
+              ")"}]}]}], ")"}]}], ")"}], "/", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{
+           SuperscriptBox["policingdemography`Private`n", "2"], "+", 
+           RowBox[{
+           "policingdemography`Private`b", " ", 
+            "policingdemography`Private`rb", " ", 
+            "policingdemography`Private`th", " ", 
+            SuperscriptBox[
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"-", "policingdemography`Private`n"}], " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"-", "1"}], "+", "policingdemography`Private`p"}], 
+                ")"}], " ", "policingdemography`Private`y"}], ")"}], 
+             "policingdemography`Private`gamma"]}], "-", 
+           RowBox[{
+           "policingdemography`Private`n", " ", 
+            "policingdemography`Private`rb", " ", 
+            "policingdemography`Private`th", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"-", "1"}], "+", 
+              RowBox[{
+              "policingdemography`Private`c1", " ", 
+               "policingdemography`Private`y"}], "+", 
+              RowBox[{"policingdemography`Private`c2", " ", 
+               SuperscriptBox["policingdemography`Private`y", "2"]}], "+", 
+              RowBox[{"policingdemography`Private`d", " ", 
+               SuperscriptBox[
+                RowBox[{"(", 
+                 RowBox[{
+                 "policingdemography`Private`p", " ", 
+                  "policingdemography`Private`y"}], ")"}], 
+                "policingdemography`Private`eta"]}], "-", 
+              RowBox[{
+              "policingdemography`Private`d", " ", 
+               "policingdemography`Private`y", " ", 
+               SuperscriptBox[
+                RowBox[{"(", 
+                 RowBox[{
+                 "policingdemography`Private`p", " ", 
+                  "policingdemography`Private`y"}], ")"}], 
+                "policingdemography`Private`eta"]}]}], ")"}]}]}], ")"}], 
+         "2"]}]}], ")"}]}], ")"}]}], "-", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "policingdemography`Private`m"}], ")"}], "2"],
+     " ", 
+    RowBox[{
+     SuperscriptBox["policingdemography`Private`w", 
+      TagBox[
+       RowBox[{"(", 
+        RowBox[{"0", ",", "1", ",", "0"}], ")"}],
+       Derivative],
+      MultilineFunction->None], "[", 
+     RowBox[{
+     "policingdemography`Private`y", ",", "policingdemography`Private`y", ",",
+       "policingdemography`Private`n"}], "]"}]}], 
+   RowBox[{
+    RowBox[{"-", "1"}], "-", 
+    RowBox[{"2", " ", "policingdemography`Private`m", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "policingdemography`Private`n"}], ")"}]}], 
+    "+", 
+    RowBox[{
+     SuperscriptBox["policingdemography`Private`m", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "policingdemography`Private`n"}], 
+      ")"}]}]}]]}]], "Output",
+ CellChangeTimes->{3.802522742827373*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"36dd17d6-4f6e-4118-95d5-367e0b36230e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"names", "=", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"values", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "1", "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "5", ",", "6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"70", ",", "80", ",", "90"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"combinationsList", "=", 
+  RowBox[{"Tuples", "[", "values", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.802596223113353*^9, 3.802596300054513*^9}, {
+  3.8025963377659388`*^9, 3.802596345845784*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"25a18bae-203f-4f67-a230-178ea86c76f5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "4", ",", "70"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "4", ",", "80"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "4", ",", "90"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "5", ",", "70"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "5", ",", "80"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "5", ",", "90"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "6", ",", "70"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "6", ",", "80"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "6", ",", "90"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.802596301077717*^9, 3.8025963465400677`*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"5a373828-12cd-47b4-87ef-ed87b8572b37"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"MapRules", "[", 
+   RowBox[{"variables_", ",", "values_"}], "]"}], ":=", 
+  RowBox[{"MapThread", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"#1", "\[Rule]", "#2"}], "&"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"variables", ",", "values"}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"combinationsRules", "=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"MapRules", "[", 
+       RowBox[{"names", ",", "#"}], "]"}], "&"}], ",", "combinationsList"}], 
+    "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.802596358672504*^9, 3.802596379748579*^9}, {
+  3.802596466844913*^9, 3.8025965027917643`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"88e31fc1-283d-461e-aa93-aba4713aca60"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["combinationsRules"], "Input",
+ CellChangeTimes->{{3.8025965143220167`*^9, 3.802596518033558*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"d945d495-3503-4fcd-9f60-5a60f9bf02b1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "4"}], ",", 
+     RowBox[{"c", "\[Rule]", "70"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "4"}], ",", 
+     RowBox[{"c", "\[Rule]", "80"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "4"}], ",", 
+     RowBox[{"c", "\[Rule]", "90"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "5"}], ",", 
+     RowBox[{"c", "\[Rule]", "70"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "5"}], ",", 
+     RowBox[{"c", "\[Rule]", "80"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "5"}], ",", 
+     RowBox[{"c", "\[Rule]", "90"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "6"}], ",", 
+     RowBox[{"c", "\[Rule]", "70"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "6"}], ",", 
+     RowBox[{"c", "\[Rule]", "80"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "6"}], ",", 
+     RowBox[{"c", "\[Rule]", "90"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.802596519035881*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"046baa8f-1800-4de7-aa2c-ee7bf4029944"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"MapThread", "[", 
+     RowBox[{"names", ",", "#"}], "]"}], "&"}], ",", "combinationsList"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.802596559181937*^9, 
+  3.802596561100939*^9}},ExpressionUUID->"f71dd2a2-2200-4687-86a8-\
+f0b3dfd92ab9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"MapThread", "[", 
+     RowBox[{"Rule", ",", 
+      RowBox[{"{", 
+       RowBox[{"names", ",", 
+        RowBox[{"combinationsList", "[", 
+         RowBox[{"[", "#", "]"}], "]"}]}], "}"}]}], "]"}], "&"}], ",", 
+   RowBox[{"Range", "[", 
+    RowBox[{"Length", "[", "combinationsList", "]"}], "]"}]}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.802596669289905*^9, 3.8025967381493187`*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"c00befef-1e07-4052-a0fa-0104b17a9963"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "4"}], ",", 
+     RowBox[{"c", "\[Rule]", "70"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "4"}], ",", 
+     RowBox[{"c", "\[Rule]", "80"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "4"}], ",", 
+     RowBox[{"c", "\[Rule]", "90"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "5"}], ",", 
+     RowBox[{"c", "\[Rule]", "70"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "5"}], ",", 
+     RowBox[{"c", "\[Rule]", "80"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "5"}], ",", 
+     RowBox[{"c", "\[Rule]", "90"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "6"}], ",", 
+     RowBox[{"c", "\[Rule]", "70"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "6"}], ",", 
+     RowBox[{"c", "\[Rule]", "80"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "\[Rule]", "1"}], ",", 
+     RowBox[{"b", "\[Rule]", "6"}], ",", 
+     RowBox[{"c", "\[Rule]", "90"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.802596695653469*^9, {3.802596730977055*^9, 3.802596739357141*^9}},
+ CellLabel->"Out[14]=",ExpressionUUID->"c9860091-1dae-458d-a001-32000d8d14ab"]
+}, Open  ]]
+}, Open  ]]
 },
 WindowSize->{3674, 2036},
 WindowMargins->{{0, Automatic}, {0, Automatic}},
@@ -36,9 +4361,121 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[558, 20, 186, 3, 111, "Input",ExpressionUUID->"6511895a-5ff5-4164-a7b9-e8c12ef3964a"],
+Cell[747, 25, 458, 8, 63, "Input",ExpressionUUID->"9a45382c-c240-4663-ae0b-95b657da9069"],
+Cell[CellGroupData[{
+Cell[1230, 37, 205, 3, 138, "Section",ExpressionUUID->"86f0fc35-5343-416e-883f-79f64547277c"],
+Cell[1438, 42, 15253, 431, 839, "Input",ExpressionUUID->"e36a9b64-4848-4bed-abc9-4dec74615178"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16728, 478, 170, 3, 138, "Section",ExpressionUUID->"b07fca77-26b7-401d-b92f-1aa2337eeaa7"],
+Cell[CellGroupData[{
+Cell[16923, 485, 492, 11, 63, "Input",ExpressionUUID->"a4439e2f-3f65-4770-86fc-8e30eb181e9d"],
+Cell[17418, 498, 1501, 27, 687, "Output",ExpressionUUID->"b8a6011b-d01e-4218-903a-c7b2b2f80362"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18956, 530, 197, 3, 63, "Input",ExpressionUUID->"7a8582ee-2f0a-4896-a2cb-711c728f3aee"],
+Cell[19156, 535, 165, 2, 133, "Output",ExpressionUUID->"aca84fda-31a1-4bee-88f6-5f4a1c316863"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19358, 542, 606, 10, 205, "Input",ExpressionUUID->"def3d281-ae14-4a6c-b952-3c03ddb89de7"],
+Cell[19967, 554, 289, 4, 102, "Output",ExpressionUUID->"7b3d92cf-94bc-4658-b93a-f6b31babd9d1"],
+Cell[20259, 560, 285, 4, 102, "Output",ExpressionUUID->"a3ec2dfc-7698-4ccd-8857-c8ba34c77778"],
+Cell[20547, 566, 1642, 44, 297, "Output",ExpressionUUID->"13c32131-c3a0-45c1-aa09-eeac551214ea"],
+Cell[22192, 612, 289, 4, 102, "Output",ExpressionUUID->"6280e901-d020-4626-bfad-6f07049d04fb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22518, 621, 1263, 34, 252, "Input",ExpressionUUID->"45d97a9b-4979-4e01-9eaa-cc14d94aa9a8"],
+Cell[23784, 657, 320, 4, 102, "Output",ExpressionUUID->"c5986a60-1ab0-45b5-a0cb-a105a5c9de0b"],
+Cell[24107, 663, 321, 4, 102, "Output",ExpressionUUID->"c614e0e1-438b-4be0-b3c7-d1c7d96174d0"],
+Cell[24431, 669, 322, 4, 102, "Output",ExpressionUUID->"df80c0a3-2ac3-4715-8633-d726054cadb7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24790, 678, 325, 6, 63, "Input",ExpressionUUID->"a4fd519e-039e-4d58-8a39-80d263d853d1"],
+Cell[25118, 686, 188, 2, 102, "Output",ExpressionUUID->"1df81317-6c3e-458f-8f74-38e86076e5df"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25343, 693, 888, 23, 111, "Input",ExpressionUUID->"d758a292-3bda-4ece-94ad-c4e9c5e01706"],
+Cell[26234, 718, 167, 2, 102, "Output",ExpressionUUID->"0b8a20ae-a07d-44c9-9249-d8d1ad2fbff2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26438, 725, 200, 3, 63, "Input",ExpressionUUID->"85784dc9-71a0-4be9-8103-8fb2bea3760f"],
+Cell[26641, 730, 231, 4, 102, "Output",ExpressionUUID->"2dbffcf5-3e17-435a-8c5c-9fe6a14ed2cf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26909, 739, 243, 4, 63, "Input",ExpressionUUID->"dd276aef-3d2b-4bb7-bae2-a59d9d37a49f"],
+Cell[27155, 745, 212, 4, 102, "Output",ExpressionUUID->"95b6cea4-055e-484a-a030-c20073d2beaf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27404, 754, 330, 8, 63, "Input",ExpressionUUID->"14a9f8e9-a7b3-4a6f-ba61-3398650a6bf4"],
+Cell[27737, 764, 251, 6, 102, "Output",ExpressionUUID->"868af1c7-78e5-40d3-85d6-60d5017f067b"]
+}, Open  ]],
+Cell[28003, 773, 829, 22, 111, "Input",ExpressionUUID->"9505cad6-34f2-4c98-a635-0e81bb5c0705"],
+Cell[CellGroupData[{
+Cell[28857, 799, 232, 4, 63, "Input",ExpressionUUID->"9cc76555-d185-4dee-a781-4a1c376ce5ba"],
+Cell[29092, 805, 2313, 65, 185, "Output",ExpressionUUID->"1607ffbf-a095-4a0c-8158-7b0b734def14"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31442, 875, 357, 9, 63, "Input",ExpressionUUID->"6a26e88c-9ac5-4288-a652-5de6a07a2059"],
+Cell[31802, 886, 430, 11, 108, "Output",ExpressionUUID->"d255f400-bfa7-4651-8241-a01ff593b13d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32269, 902, 1014, 22, 111, "Input",ExpressionUUID->"3e32b4d5-e16b-4f6e-aa50-018b1d5f08c7"],
+Cell[33286, 926, 3814, 102, 270, "Output",ExpressionUUID->"f123b162-bd96-4708-8899-ef216306100b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37137, 1033, 1060, 26, 158, "Input",ExpressionUUID->"b676f4f1-9703-4db3-ade0-edf79b61d825"],
+Cell[38200, 1061, 15368, 424, 599, "Output",ExpressionUUID->"31d40f3d-056a-4f84-b3d0-bad67facdb28"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53605, 1490, 148, 2, 63, "Input",ExpressionUUID->"33d61530-afd4-49b4-bf5b-856f512638cb"],
+Cell[53756, 1494, 2513, 78, 201, "Output",ExpressionUUID->"d8f686b8-8afd-4236-a8f6-d76eb768b212"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56306, 1577, 479, 12, 63, "Input",ExpressionUUID->"a16ba4b0-8c39-4921-9ed1-dbb2fec60308"],
+Cell[56788, 1591, 456, 12, 102, "Output",ExpressionUUID->"c8d203b3-1013-4856-98cc-9956bc14ce03"]
+}, Open  ]],
+Cell[57259, 1606, 152, 3, 63, "Input",ExpressionUUID->"3b38da85-4cdd-47c0-a089-f99d03b171b8"],
+Cell[CellGroupData[{
+Cell[57436, 1613, 226, 4, 63, "Input",ExpressionUUID->"682666ea-d740-490d-86de-84e6f530735d"],
+Cell[57665, 1619, 15391, 425, 599, "Output",ExpressionUUID->"a1624a91-dac1-424c-85a3-9571faa405d6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73093, 2049, 529, 8, 63, "Input",ExpressionUUID->"25354f15-c40c-4844-8748-7620349c2997"],
+Cell[73625, 2059, 393, 8, 102, "Output",ExpressionUUID->"1c048c5c-fdfd-404e-ae17-b5457f2c2e2c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[74055, 2072, 202, 3, 63, "Input",ExpressionUUID->"d2030629-cabd-4c4c-8b7d-88f715f46e52"],
+Cell[74260, 2077, 27347, 672, 3663, "Output",ExpressionUUID->"eeeec3c0-2d75-4e9f-8315-65c07de2134f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[101644, 2754, 349, 6, 63, "Input",ExpressionUUID->"a682123d-7e0e-4399-b67e-62b6d3f1c371"],
+Cell[101996, 2762, 27440, 673, 3663, "Output",ExpressionUUID->"941e3ecd-7b4a-4216-9391-ea9282fcc977"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[129473, 3440, 254, 4, 63, "Input",ExpressionUUID->"d91a953e-8673-459a-9e9d-a5facc5da3f0"],
+Cell[129730, 3446, 151, 2, 102, "Output",ExpressionUUID->"88b27286-80a9-4abc-b64a-947d341feb48"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[129918, 3453, 152, 3, 63, "Input",ExpressionUUID->"76e0f34c-06c9-44de-8958-2be79657f98d"],
+Cell[130073, 3458, 27347, 672, 3663, "Output",ExpressionUUID->"36dd17d6-4f6e-4118-95d5-367e0b36230e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[157457, 4135, 723, 20, 158, "Input",ExpressionUUID->"25a18bae-203f-4f67-a230-178ea86c76f5"],
+Cell[158183, 4157, 827, 22, 102, "Output",ExpressionUUID->"5a373828-12cd-47b4-87ef-ed87b8572b37"]
+}, Open  ]],
+Cell[159025, 4182, 755, 21, 111, "Input",ExpressionUUID->"88e31fc1-283d-461e-aa93-aba4713aca60"],
+Cell[CellGroupData[{
+Cell[159805, 4207, 190, 2, 94, "Input",ExpressionUUID->"d945d495-3503-4fcd-9f60-5a60f9bf02b1"],
+Cell[159998, 4211, 1668, 49, 102, "Output",ExpressionUUID->"046baa8f-1800-4de7-aa2c-ee7bf4029944"]
+}, Open  ]],
+Cell[161681, 4263, 310, 9, 63, "Input",ExpressionUUID->"f71dd2a2-2200-4687-86a8-f0b3dfd92ab9"],
+Cell[CellGroupData[{
+Cell[162016, 4276, 535, 14, 94, "Input",ExpressionUUID->"c00befef-1e07-4052-a0fa-0104b17a9963"],
+Cell[162554, 4292, 1717, 50, 102, "Output",ExpressionUUID->"c9860091-1dae-458d-a001-32000d8d14ab"]
+}, Open  ]]
+}, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
