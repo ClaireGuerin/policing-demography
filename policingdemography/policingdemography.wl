@@ -55,6 +55,7 @@ numerics[parSet_] := Block[{ecoequi,nZero,nOne,nTrend},
 	(** ->[sEqui] Get the selection gradient sign for a range of y between 0 and 1 (included)  **)
 	gradientZeroOut = s /. ecoequi /. y -> # & /@ Range[0.1, 1, 0.1];
 	gradientZeroIn = s /. ecoequi /. y -> 10^(-10);
+	(* errorTest = Check[s /. {n->nOne}, StringForm["Error for n*(y=1)=``", nOne]];  *)
 	sEqui = Prepend[gradientZeroOut,gradientZeroIn];
 	(** ->[sZero] Get the sign / value of the selection gradient for y=0 and n=neq(1) **)
 	sZero = s /. {n -> nOne, y -> 10^(-10)};
@@ -62,6 +63,7 @@ numerics[parSet_] := Block[{ecoequi,nZero,nOne,nTrend},
 	(**********************************************************************************)
 
 	Return[<|"nZero"->nZero,"nOne"->nOne,"nTrend"->nTrend,"sEqui"->sEqui,"sZero"->sZero|>]]
+	(* Return[errorTest]] *)
 
 search[values_List] := Block[{names, combinationsList, combinationsRule,results},
 	(*Assign the pars values to the private set of parameter rules*)
@@ -72,9 +74,9 @@ search[values_List] := Block[{names, combinationsList, combinationsRule,results}
 
 	(*Calculate all the things we need*)
 	results = numerics[#] &/@ combinationsRule;
-	Return[<|"comb"->combinationsRule, "res"->results|>]]]
+	Return[<|"comb"->combinationsList, "res"->results|>]]]
 
-search::len = "You gave `1` parameters, this model needs 10";
+search::len = "You gave `1` parameters, this model needs exactly 10";
 
 End[]
 
